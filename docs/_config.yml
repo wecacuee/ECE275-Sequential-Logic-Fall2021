@@ -1,0 +1,41 @@
+url: https://vikasdhiman.info/ECE275-Sequential-Logic
+theme: plainwhite
+remote_theme:  samarsault/plainwhite-jekyll
+title: Sequential Logic Systems (ECE275) at the University of Maine
+author: Vikas Dhiman
+description: Sequential Logic Systems (ECE275) at the University of Maine
+show_excerpts: true
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+paginate: 10
+
+
+header_pages:
+  - assignments.md
+  - syllabus.md
+  - course-material.md
+
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+plainwhite:
+  name: Sequential Logic Systems (ECE275)
+  tagline: |
+     Boolean algebra, Flip-flops, K-Maps, VHDL
+
+  sitemap: true
+
+  navigation:
+    - title: Syllabus
+      url: "/syllabus"
+    - title: Assignments
+      url: "/assignments"
+    - title: Similar courses
+      url: "/similar-courses"
+
+  portfolio_image: images/Transistor_Bistable_interactive_animated-en.svg
+    
