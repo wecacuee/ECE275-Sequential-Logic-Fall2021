@@ -1,4 +1,5 @@
-url: https://vikasdhiman.info/ECE275-Sequential-Logic/
+url: https://vikasdhiman.info
+baseurl: /ECE275-Sequential-Logic
 theme: plainwhite
 remote_theme:  samarsault/plainwhite-jekyll
 title: Sequential Logic Systems (ECE275) at the University of Maine
@@ -31,11 +32,11 @@ plainwhite:
 
   navigation:
     - title: Syllabus
-      url: "syllabus"
+      url: "/syllabus"
     - title: Assignments
-      url: "assignments"
+      url: "/assignments"
     - title: Similar courses
-      url: "similar-courses"
+      url: "/similar-courses"
 
   portfolio_image: images/Transistor_Bistable_interactive_animated-en.svg
     

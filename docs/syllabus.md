@@ -6,7 +6,7 @@ layout: page
 ## Fall 2021
 
 
-Instructor(s): 	Vikas Dhiman, 105 Barrows, 581-2222, vikas.dhiman@maine.edu
+Instructors: 	Vikas Dhiman, 105 Barrows, 581-2222, [`vikas.dhiman@maine.edu`](mailto:vikas.dhiman@maine.edu)
 
 Office Hours: 4-5:30pm MWF most likely, but feel free to try me anytime during the day
 
