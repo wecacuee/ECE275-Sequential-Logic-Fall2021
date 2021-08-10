@@ -2,6 +2,10 @@
 layout: page
 ---
 # Related Courses
+## UMaine Fall2020 and before
+
+ + Prof Richard Eason's last year [course](http://web.eece.maine.edu/eason/ece275/).
+
 ## MIT Courseware
 
 ### 6.004   Computation Structures

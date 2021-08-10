@@ -14,8 +14,6 @@ Credits: 3 credits
 
 [Web page](https://vikasdhiman.info/ECE275-Sequential-Logic)
 
-The course is mostly based on Prof Richard Eason's last year [course](http://web.eece.maine.edu/eason/ece275/).
-
 Text: Fundamentals of Digital Logic with Verilog Design (3rd ed.) by Brown and Vranesic. [On a side note: In solidarity with Aaron Swartz, Library Genesis and Sci-Hub statement](https://custodians.online/)
 
 Prerequisite: ECE 177
@@ -59,13 +57,16 @@ University of Maine administrative policy statements
 Academic honesty is very important. It is dishonest to cheat on exams, to copy term papers, to submit papers written by another person, to fake experimental results, or to copy or reword parts of books or articles into your own papers without appropriately citing the source. Students committing or aiding in any of these violations may be given failing grades for an assignment or for an entire course, at the discretion of the instructor. In addition to any academic action taken by an instructor, these violations are also subject to action under the University of Maine Student Conduct Code. The maximum possible sanction under the student conduct code is dismissal from the University. Please see the University of Maine System's Academic Integrity Policy listed in the Board Policy Manual as Policy 314: https://www.maine.edu/board-of-trustees/policy-manual/section-314/
 
 ### Students Accessibility Services Statement
-If you have a disability for which you may be requesting an accommodation, please contact Student Accessibility Services, 121 East Annex, 581.2319, as early as possible in the term. Students who have already been approved for accommodations by SAS and have a current accommodation letter should meet with me, Rick Eason, (the instructor of the course) privately as soon as possible.
+
+If you have a disability for which you may be requesting an accommodation, please contact Student Accessibility Services, 121 East Annex, 581.2319, as early as possible in the term. Students who have already been approved for accommodations by SAS and have a current accommodation letter should meet with me, Vikas Dhiman, (the instructor of the course) privately as soon as possible.
 
 ### Course Schedule Disclaimer (Disruption Clause)
 
 In the event of an extended disruption of normal classroom activities (due to COVID-19 or other long-term disruptions), the format for this course may be modified to enable its completion within its programmed time frame. In that event, you will be provided an addendum to the syllabus that will supersede this version.
 
-COVID-19 is an infectious disease caused by the coronavirus SARS-CoV-2. The virus is transmitted person-to-person through respiratory droplets that are expelled when breathing, talking, eating, coughing or sneezing. Additionally, the virus is stable on surfaces and can be transmitted when someone touches a contaminated surface and transfers the virus to their nose or mouth. When someone becomes infected with COVID-19 they may either have no symptoms or symptoms that range from mild to severe and can even be fatal. During this global pandemic, it is imperative that all students, faculty, and staff abide by the safety protocols and guidelines set forth by the university to ensure the safety of our campus. All students are encouraged to make the Black Bears Care Pact to protect the health of themselves, the health of others, and the college of our hearts always.
+### COVID-19
+
+COVID-19 is an infectious disease caused by the coronavirus SARS-CoV-2. The virus is transmitted person-to-person through respiratory droplets that are expelled when breathing, talking, eating, coughing or sneezing. Additionally, the virus is stable on surfaces and can be transmitted when someone touches a contaminated surface and transfers the virus to their nose or mouth. When someone becomes infected with COVID-19 they may either have no symptoms or symptoms that range from mild to severe and can even be fatal. During this global pandemic, it is imperative that all students, faculty, and staff abide by the safety protocols and guidelines set forth by the university to ensure the safety of our campus. All students are encouraged to make the Black Bears Care Pact to protect the health of themselves, the health of others, and the college of our hearts always. Please follow the [University of Maine COVID-19 Health and safety guidance](https://umaine.edu/return/category/student-information/)
 
 ### Observance of Religious Holidays/Events
 

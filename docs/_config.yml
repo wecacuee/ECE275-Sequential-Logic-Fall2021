@@ -31,6 +31,10 @@ plainwhite:
 
   sitemap: true
 
+  search: true
+
+  html_lang: "en"
+
   navigation:
     - title: Syllabus
       url: "/syllabus"
@@ -41,3 +45,7 @@ plainwhite:
 
   portfolio_image: images/Transistor_Bistable_interactive_animated-en.svg
     
+  condensed_mobile:
+    - home
+    - post
+    - page

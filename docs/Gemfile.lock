@@ -73,6 +73,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  jekyll-feed
   jekyll-paginate
   jekyll-seo-tag
   minima
