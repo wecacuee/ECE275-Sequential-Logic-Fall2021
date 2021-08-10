@@ -22,6 +22,7 @@ header_pages:
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-feed
 
 plainwhite:
   name: Sequential Logic Systems (ECE275)
