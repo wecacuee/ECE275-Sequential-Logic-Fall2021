@@ -23,9 +23,10 @@ Prerequisite: ECE 177
 ### Grading:
 
 Grades are based on the following:
-    - Homework 20%, and Labs 15% -- 35% total
-    - Two prelims (about Oct. 5 and about Nov. 9) and quizzes -- 45%
-    - Final (Comprehensive) -- 20%
+
+- Homework 20%, and Labs 15% -- 35% total
+- Two prelims (about Oct. 5 and about Nov. 9) and quizzes -- 45%
+- Final (Comprehensive) -- 20%
 
 There will be no make-ups for missed exams.  Plan to be there.
 Late work -- generally not accepted without good reason.
