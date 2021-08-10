@@ -16,7 +16,7 @@ Credits: 3 credits
 
 The course is mostly based on Prof Richard Eason's last year [course](http://web.eece.maine.edu/eason/ece275/).
 
-Text: Fundamentals of Digital Logic with Verilog Design (3rd ed.) by Brown and Vranesic. (Optional) 
+Text: Fundamentals of Digital Logic with Verilog Design (3rd ed.) by Brown and Vranesic. [One a side note: In solidarity with Aaron Swartz, Library Genesis and Sci-Hub statement](https://custodians.online/)
 
 Prerequisite: ECE 177
 
