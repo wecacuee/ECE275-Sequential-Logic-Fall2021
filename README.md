@@ -61,3 +61,7 @@ Book: http://www.cs.ucr.edu/~vahid/dd/
 ### Circuit Verse by IIIT Bangolore
   + https://learn.circuitverse.org/docs/logic-design/
 
+
+## Intel FPGA academic program
+
+https://software.intel.com/content/www/us/en/develop/topics/fpga-academic/materials-digital-logic.html

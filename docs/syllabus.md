@@ -68,9 +68,7 @@ In the event of an extended disruption of normal classroom activities (due to CO
 
 ### COVID-19
 
-COVID-19 is an infectious disease caused by the coronavirus SARS-CoV-2. The virus is transmitted person-to-person through respiratory droplets that are expelled when breathing, talking, eating, coughing or sneezing. Additionally, the virus is stable on surfaces and can be transmitted when someone touches a contaminated surface and transfers the virus to their nose or mouth. When someone becomes infected with COVID-19 they may either have no symptoms or symptoms that range from mild to severe and can even be fatal. During this global pandemic, it is imperative that all students, faculty, and staff abide by the safety protocols and guidelines set forth by the university to ensure the safety of our campus. All students are encouraged to make the Black Bears Care Pact to protect the health of themselves, the health of others, and the college of our hearts always. Please follow the [University of Maine COVID-19 Health and safety guidance](https://umaine.edu/return/category/student-information/)
-
-
+To keep our campus safe, students are expected to comply with all University policies related to the COVID-19 pandemic. For the latest guidance, please visit https://umaine.edu/return
 
 ### Observance of Religious Holidays/Events
 
