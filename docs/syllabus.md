@@ -6,9 +6,7 @@ layout: page
 ## Fall 2021
 
 
-Instructors: 	Vikas Dhiman, Barrows Hall Rm 105, [`vikas.dhiman@maine.edu`](mailto:vikas.dhiman@maine.edu)
-
-Office Hours: 4-5:30pm MWF walk-ins welcome. Otherwise, please send me an email proposing one of the free slots in my calendar: <https://calendar.google.com/calendar/u/0/embed?src=vikas.dhiman@maine.edu&ctz=America/New_York>
+### Instructors
 
 Credits: 3 credits
 
@@ -18,13 +16,25 @@ Text: Fundamentals of Digital Logic with Verilog Design (3rd ed.) by Brown and V
 
 Prerequisite: ECE 177
 
+#### Vikas Dhiman
+
+Barrows Hall Rm 105, [`vikas.dhiman@maine.edu`](mailto:vikas.dhiman@maine.edu)
+
+Office Hours: 4-5:30pm MWF walk-ins welcome. Otherwise, please send me an email proposing one of the free slots in my calendar: <https://calendar.google.com/calendar/u/0/embed?src=vikas.dhiman@maine.edu&ctz=America/New_York>
+
+### Pascal Francis-Mezger
+
+13 Barrows, [`pascal.francismezger@maine.edu`](mailto:pascal.francismezger@maine.ed)
+Office hours: (via zoom) tba 
+
+
 ### Grading:
 
 Grades are based on the following:
 
 - Homework 10%, and Labs 25% -- 35% total
 - Two mid term exams (about Oct. 5 and about Nov. 9) and quizzes -- 35%
-- Final exam or Project (Comprehensive) -- 30%
+- Project -- 30%
 
 There will be no make-ups for missed exams.  Plan to be there.
 Late work -- generally not accepted without good reason.
