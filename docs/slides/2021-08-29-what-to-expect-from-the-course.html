@@ -44,6 +44,7 @@
  .reveal .slides section .source {
      color: gray;
      font-size: small;
+     text-align: right;
  }
 </style>
 </head>
@@ -180,7 +181,7 @@ If you tell any of your teachers about sexual discrimination involving members o
 <img src="images/counter.svg" style="height:250px" />
 <div style="display:inline-block;width:100px;height:20px"></div>
 <img src="images/coins-counter.svg" style="height:250px" />
-<span class="source">Source: ECE 275 Fall 2020, by Rick Eason</span>
+<div class="source">Source: ECE 275 Fall 2020, by Rick Eason</div>
     </textarea>
 </section>
 
@@ -204,6 +205,47 @@ If you tell any of your teachers about sexual discrimination involving members o
     </textarea>
 </section>
 
+<section data-markdown>
+    <textarea data-template>
+## Why study theory behind the CAD tools at all?
+- Bad specification to CAD tools lead to bad output
+- To understand what the tools are doing and understand the reasons why things are going wrong.
+- To understand the options and error messages provided by the CAD tools.
+    </textarea>
+</section>
+
+<section>
+    <h2>Switch</h2>
+    <img src="images/switch-symbol.png" style="height:500px" />
+    <div style="width:900px;height:50px" class="source">
+    Source:Verilog 3rd, Brown and Vranesic 2014
+    </div>
+</section>
+
+<section>
+    <h2>Basic gates</h2>
+    <div style="display:inline-block;width:450px;vertical-align:top">
+        <span style="text-align:center"> AND gate</span>
+        <br/>
+        <small>\( L_{\text{AND}}(x_1, x_2) = x_1 \cdot x_2 \)</small>
+        <img src="images/AND-circuit.png" style="height=200px" />
+    </div>
+    <div style="display:inline-block;width:450px;vertical-align:top">
+        <span style="text-align:center"> OR gate</span>
+        <br/>
+        <small>\( L_{\text{OR}}(x_1, x_2) = x_1 + x_2 \)</small>
+        <img src="images/OR-circuit.png" style="height=200px" />
+    </div>
+    <br/>
+    <div style="display:inline-block;width:450px:vertical-align:top">
+        <span style="text-align:center"> NOT gate</span>
+        <br/>
+        <small>\( L_{\text{NOT}}(x_1) = \bar{x}_1 \)</small>
+        <br/>
+        <img src="images/NOT-circuit.png" style="height=200px" />
+    </div>
+    <span class="source">Source:Verilog 3rd, Brown and Vranesic 2014</span>
+</section>
 
 <section> <h1>Questions and Feedback </h1>
     Feedback link: <a href="https://forms.gle/qrvoXnVt5DuG4bv5A" >https://forms.gle/qrvoXnVt5DuG4bv5A</a>
@@ -212,6 +254,28 @@ If you tell any of your teachers about sexual discrimination involving members o
 
 		</div>
 	</div>
+
+    <!-- -
+
+    <section data-markdown>
+        <textarea data-template>
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+    ## Boolean algebra
+        </textarea>
+    </section>
+
+    <section data-markdown>
+        <textarea data-template>
+## Representations of Logic systems
+
+* Circuits
+        </textarea>
+    </section>
+    -->
 
 
 	<script>
