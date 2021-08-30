@@ -14,9 +14,10 @@ paginate: 10
 
 
 header_pages:
-  - assignments.md
+  - schedule.md
   - syllabus.md
-  - course-material.md
+  - labnotes.md
+  - slides/2021-08-29-what-to-expect-from-the-course.html
 
 
 plugins:
@@ -38,14 +39,12 @@ plainwhite:
   navigation:
     - title: Syllabus
       url: "/syllabus"
-    - title: Assignments
-      url: "/assignments"
-    - title: Similar courses
-      url: "/similar-courses"
+    - title: Schedule
+      url: "/schedule"
     - title: Lab notes
       url: "/labnotes"
-    - title: Lecture notes
-      url: "/lecture-notes"
+    - title: Similar courses
+      url: "/similar-courses"
 
   portfolio_image: images/Transistor_Bistable_interactive_animated-en.svg
     

@@ -6,8 +6,6 @@ layout: page
 ## Fall 2021
 
 
-### Instructors
-
 Credits: 3 credits
 
 Web page: <https://vikasdhiman.info/ECE275-Sequential-Logic>
@@ -16,11 +14,13 @@ Text: Fundamentals of Digital Logic with Verilog Design (3rd ed.) by Brown and V
 
 Prerequisite: ECE 177
 
+### Instructors
+
 #### Vikas Dhiman
 
 Barrows Hall Rm 105, [`vikas.dhiman@maine.edu`](mailto:vikas.dhiman@maine.edu)
 
-Office Hours: 4-5:30pm MWF walk-ins welcome. Otherwise, please send me an email proposing one of the free slots in my calendar: <https://calendar.google.com/calendar/u/0/embed?src=vikas.dhiman@maine.edu&ctz=America/New_York>
+Office Hours: 4-5:30pm MW. Otherwise, please send me an email proposing one of the free slots in my calendar: <https://calendar.google.com/calendar/u/0/embed?src=vikas.dhiman@maine.edu&ctz=America/New_York>
 
 ### Pascal Francis-Mezger
 
@@ -32,8 +32,8 @@ Office hours: (via zoom) tba
 
 Grades are based on the following:
 
-- Homework 10%, and Labs 25% -- 35% total
-- Two mid term exams (about Oct. 5 and about Nov. 9) and quizzes -- 35%
+- Homework 25%, and Labs 25% -- 50% total
+- Two mid term exams (about Oct. 6 and about Nov. 8) -- 20% 
 - Project -- 30%
 
 There will be no make-ups for missed exams.  Plan to be there.
