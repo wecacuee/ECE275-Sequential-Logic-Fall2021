@@ -5,7 +5,7 @@ layout: page
 
 |       |   | Lecture topic                                                  | Reading assignment before the lecture | Homework due              |
 | ----- | - | -------------------------------------------------------------- | ------------------------------------- | ------------------------- |
-| 8/30  | M | [Course structure, Combinatorial vs Sequential circuits]({{site.baseurl}}/2021-08-29-what-to-expect-from-the-course.html) |                                       |                           |
+| 8/30  | M | [Course structure, Combinatorial vs Sequential circuits]({{site.baseurl}}/slides/2021-08-29-what-to-expect-from-the-course.html) |                                       |                           |
 | 9/1   | W | Ways to express digial systems                                 |                                       |                           |
 | 9/3   | F | Boolean algebra theorems                                       | Read through the end of Section 2.5.  |                           |
 | 9/6   | M | Labor day, No class                                            |                                       |                           |
