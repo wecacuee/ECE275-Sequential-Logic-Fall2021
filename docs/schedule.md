@@ -9,7 +9,7 @@ layout: page
 | 9/1   | W | Ways to express digial systems                                 |                                       |                           |
 | 9/3   | F | Boolean algebra theorems                                       | Read through the end of Section 2.5.  |                           |
 | 9/6   | M | Labor day, No class                                            |                                       |                           |
-| 9/8   | W | More boolean algebra, canonical forms                          |                                       | [Homework 1]({{site.baseurl}/homeworks/hw1/hw1.pdf) |
+| 9/8   | W | More boolean algebra, canonical forms                          |                                       | [Homework 1]({{site.baseurl}}/homeworks/hw1/hw1.pdf) |
 | 9/10  | F |                                                                |                                       |                           |
 | 9/13  | M | Optimization of circuits                                       |                                       |                           |
 | 9/15  | W |                                                                |                                       | Homework 2                |
