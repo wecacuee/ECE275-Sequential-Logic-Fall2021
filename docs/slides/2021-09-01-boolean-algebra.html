@@ -637,7 +637,7 @@
 
 <section>
     <h2>Truth table to K-map</h2>
-        <div  class="image-table" style="font-size:70%">
+        <div  class="image-table" style="font-size:50%">
 <table class="truth-table">
 <thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
  <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
@@ -660,12 +660,26 @@
         </div>
         <div class="image-table">
     <h4>K-map</h4>
+
+
+    <table class="k-map-4 fragment ">
+        <tr> <th></th><th></th><th colspan="2">\(\bar{A}\)</th> <th colspan="2">\(A \)</th> </tr>
+        <tr> <th></th><th></th><th >\(\bar{B}\)</th> <th colspan="2" style="text-align:center">\(B \)</th> <th>\(\bar{B}\)</th></tr>
+        <tr> <th rowspan="2">\(\bar{C}\)</th><th>\(\bar{D}\)</th>
+            <td>\(m_0\)</td> <td>\(m_4\)</td> <td>\(m_{12}\)</td> <td>\(m_8\)</td>  </tr>
+        <tr> <th rowspan="2">\(D\)</th>
+            <td>\(m_1\)</td> <td>\(m_5\)</td> <td>\(m_{13}\)</td> <td>\(m_9\)</td>  </tr>
+        <tr> <th rowspan="2" style="border-bottom:dashed">\(C\)</th>
+            <td>\(m_3\)</td> <td>\(m_7\)</td> <td>\(m_{15}\)</td> <td>\(m_{11}\)</td>  </tr>
+        <tr> <th >\(\bar{D}\)</th>
+            <td>\(m_2\)</td> <td>\(m_6\)</td> <td>\(m_{14}\)</td> <td>\(m_{10}\)</td>  </tr>
+    </table>
 
 </section>
 
 <section>
     <h2>Truth table to K-map</h2>
-        <div  class="image-table" style="font-size:70%">
+        <div  class="image-table" style="font-size:50%">
 <table class="truth-table">
 <thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
  <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
@@ -688,18 +702,17 @@
         </div>
         <div class="image-table">
     <h4>K-map</h4>
-
     <table class="k-map-4 fragment">
         <tr> <th></th><th></th><th colspan="2">\(\bar{A}\)</th> <th colspan="2">\(A \)</th> </tr>
         <tr> <th></th><th></th><th >\(\bar{B}\)</th> <th colspan="2" style="text-align:center">\(B \)</th> <th>\(\bar{B}\)</th></tr>
         <tr> <th rowspan="2">\(\bar{C}\)</th><th>\(\bar{D}\)</th>
             <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
         <tr> <th rowspan="2">\(D\)</th>
-            <td>1</td> <td>1</td> <td>0</td> <td>0</td>  </tr>
+            <td>1</td> <td>1</td> <td>1</td> <td>0</td>  </tr>
         <tr> <th rowspan="2" style="border-bottom:dashed">\(C\)</th>
             <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
         <tr> <th >\(\bar{D}\)</th>
-            <td>0</td> <td>0</td> <td>1</td> <td>0</td>  </tr>
+            <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
     </table>
         </div>
 </section>
@@ -714,17 +727,17 @@
             <tr> <th rowspan="2">\(\bar{C}\)</th><th>\(\bar{D}\)</th>
                 <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
             <tr> <th rowspan="2">\(D\)</th>
-                <td>1</td> <td>1</td> <td>0</td> <td>0</td>  </tr>
+                <td>1</td> <td>1</td> <td>1</td> <td>0</td>  </tr>
             <tr> <th rowspan="2" style="border-bottom:dashed">\(C\)</th>
                 <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
             <tr> <th >\(\bar{D}\)</th>
-                <td>0</td> <td>0</td> <td>1</td> <td>0</td>  </tr>
+                <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
         </table>
     </div>
     <div class="image-table ">
         <h4>Expression</h4>
         <div class="fragment">
-        \(f = \bar{A}\bar{C}D + ABC\bar{D} \)
+        \(f = \bar{A}\bar{C}D + B\bar{C}D \)
         </div>
     </div>
 </section>
@@ -733,21 +746,21 @@
     <h2> Expression to truth table</h2>
     <div class="image-table ">
         <h4>Expression</h4>
-            \(f = \bar{A}\bar{C}D + ABC\bar{D} \)
+            \(f = \bar{A}\bar{C}D + B\bar{C}D \)
     </div>
     <div class="image-table">
         <h4>Truth table</h4>
         <table class="truth-table fragment " style="font-size:50%">
             <thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th>
                 <th>\(\bar{A}\bar{C}D\)</th>
-                <th>\(ABC\bar{D}\)</th>
+                <th>\(B\bar{C}D\)</th>
                 <th>f</th></tr></thead><tbody>
                     <tr><td>0 </td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>1 </td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
                     <tr><td>2 </td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>3 </td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>4 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>5 </td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>5 </td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
                     <tr><td>6 </td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>7 </td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>8 </td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
@@ -755,8 +768,8 @@
                     <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
-                    <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+                    <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
                     <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 </tbody></table>
 
@@ -862,7 +875,7 @@
 				        ]
 				},
                 chalkboard: {
-                    src: "2021-08-30-chalkboard.json"
+                    src: "2021-09-01-boolean-algebra_files/chalkboard.json"
                 },
 				plugins: [ RevealMarkdown, RevealHighlight,
                            RevealMath, // RevealAudioSlideshow, RevealAudioRecorder,
