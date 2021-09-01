@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Representations of logic sytems</title>
+
+	<meta name="description" content="What to expect from ECE275: Symbolic logic systems">
+	<meta name="author" content="Vikas Dhiman">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="reveal.js/dist/theme/simple.css" id="theme">
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/zenburn.css">
+
+	<script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+	<script src="reveal.js/plugin/math/math.js"></script>
+	<script src="reveal.js-plugins/audio-slideshow/plugin.js"></script>
+	<script src="reveal.js-plugins/audio-slideshow/RecordRTC.js"></script>
+	<script src="reveal.js-plugins/audio-slideshow/recorder.js"></script>
+	<script src="reveal.js-plugins/animate/svg.min.js"></script>
+	<script src="reveal.js-plugins/animate/plugin.js"></script>
+    <script src="reveal.js-plugins/chalkboard/plugin.js"></script>
+
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="reveal.js-plugins/menu/font-awesome/css/fontawesome.css"  >
+    <link rel="stylesheet" href="reveal.js-plugins/chalkboard/style.css">
+
+<style>
+.reveal .slides section .fragment.step-fade-in-then-out {
+	opacity: 0;
+	display: none; }
+.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
+	opacity: 1;
+	display: inline; }
+
+ .reveal .slides section .source {
+     color: gray;
+     font-size: small;
+     text-align: right;
+ }
+</style>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+
+
+<section> <h2>ECE 275: Representations of logic systems</h2>
+	<p>
+        Vikas Dhiman
+        <br/>
+		<small><tt>vikas.dhiman@maine.edu</tt></small>
+        <br/>
+        TA: Pascal Francis-Mezger
+        <br/>
+		<small><tt>pascal.francismezger@maine.edu</tt></small>
+	</p>
+</section>
+
+<style >
+ div.image-table {
+     display:inline-block;width:450px;vertical-align:top
+ }
+ div.image-table>span {
+     text-align: center;
+ }
+ table.truth-table tr th:last-child { border-left-style: double }
+ table.truth-table tr td:last-child { border-left-style: double }
+</style>
+<section>
+    <h2>Basic gates</h2>
+    <div class="image-table">
+        <span style="text-align:center"> AND gate</span>
+        <br/>
+        <small>\( L_{\text{AND}}(x_1, x_2) = x_1 \cdot x_2 \)</small>
+        <img src="2021-09-01-boolean-algebra_files/AND-circuit.png" style="height:200px" />
+    </div>
+    <div class="image-table">
+        <span style="text-align:center"> OR gate</span>
+        <br/>
+        <small>\( L_{\text{OR}}(x_1, x_2) = x_1 + x_2 \)</small>
+        <img src="2021-09-01-boolean-algebra_files/OR-circuit.png" style="height:200px" />
+    </div>
+    <br/>
+    <div class="image-table">
+        <span style="text-align:center"> NOT gate</span>
+        <br/>
+        <small>\( L_{\text{NOT}}(x_1) = \bar{x}_1 \)</small>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/NOT-circuit.png" style="height:200px" />
+    </div>
+    <span class="source">Source:Verilog 3rd, Brown and Vranesic 2014</span>
+</section>
+
+<section>
+    <h2>ANSI symbols</h2>
+    <div class="image-table">
+        <span style="text-align:center"> AND gate</span>
+        <br/>
+        <small>\( L_{\text{AND}}(x_1, x_2) = x_1 \cdot x_2 \)</small>
+        <img src="2021-09-01-boolean-algebra_files/AND_ANSI.svg" style="height:200px" />
+    </div>
+    <div class="image-table">
+        <span style="text-align:center"> OR gate</span>
+        <br/>
+        <small>\( L_{\text{OR}}(x_1, x_2) = x_1 + x_2 \)</small>
+        <img src="2021-09-01-boolean-algebra_files/OR_ANSI.svg" style="height:200px" />
+    </div>
+    <br/>
+    <div class="image-table">
+        <span style="text-align:center"> NOT gate</span>
+        <br/>
+        <small>\( L_{\text{NOT}}(x_1) = \bar{x}_1 \)</small>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/NOT_ANSI.svg" style="height:200px" />
+    </div>
+</section>
+
+<section>
+    <h2>AND Gate</h2>
+    <div class="image-table">
+        <span style="text-align:center"> Circuit (an implentation)</span>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/AND-circuit.png" style="height:200px" />
+        <br/>
+        <span class="source">Source:Verilog 3rd, Brown and Vranesic 2014</span>
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center" >Truth table</span>
+        <br/>
+        <small>
+        <table class="truth-table">
+            <tr>
+                <th>Row num</th><th>\(x_1\)</th> <th>\(x_2\)</th> <th class="out">\(x_1 \cdot x_2\)</th>
+            </tr>
+            <tr>
+                <td>0</td><td>0</td><td>0</td><td class="out">0</td>
+            </tr><tr>
+                <td>1</td><td>0</td><td>1</td><td class="out">0</td>
+            </tr><tr>
+                <td>2</td><td>1</td><td>0</td><td class="out">0</td>
+            </tr><tr>
+                <td>3</td><td>1</td><td>1</td><td class="out">1</td>
+            </tr>
+        </table>
+        </small>
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center" >Boolean expression</span>
+        <br/>
+        \(f = x_1 \cdot x_2 = x_1x_2\)
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center"> ANSI Symbol</span>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/AND_ANSI.svg" style="height:200px" />
+    </div>
+</section>
+
+<section>
+    <h2>OR Gate</h2>
+    <div class="image-table">
+        <span style="text-align:center"> Circuit (an implentation)</span>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/OR-circuit.png" style="height:200px" />
+        <br/>
+        <span class="source">Source:Verilog 3rd, Brown and Vranesic 2014</span>
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center" >Truth table</span>
+        <br/>
+        <small>
+        <table class="truth-table">
+            <tr>
+                <th>Row num</th><th>\(x_1\)</th> <th>\(x_2\)</th> <th class="out">\(x_1 + x_2\)</th>
+            </tr>
+            <tr>
+                <td>0</td><td>0</td><td>0</td><td class="out">1</td>
+            </tr><tr>
+                <td>1</td><td>0</td><td>1</td><td class="out">1</td>
+            </tr><tr>
+                <td>2</td><td>1</td><td>0</td><td class="out">1</td>
+            </tr><tr>
+                <td>3</td><td>1</td><td>1</td><td class="out">0</td>
+            </tr>
+        </table>
+        </small>
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center" >Boolean expression</span>
+        <br/>
+        \(f = x_1 + x_2 \)
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center"> ANSI Symbol</span>
+        <br/>
+        <img class="fragment" src="2021-09-01-boolean-algebra_files/OR_ANSI.svg" style="height:200px" />
+    </div>
+</section>
+
+<section>
+    <h2>NOT Gate</h2>
+    <div class="image-table">
+        <span style="text-align:center"> Circuit (an implentation)</span>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/OR-circuit.png" style="height:200px" />
+        <br/>
+        <span class="source">Source:Verilog 3rd, Brown and Vranesic 2014</span>
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center" >Truth table</span>
+        <br/>
+        <small>
+        <table class="truth-table">
+            <tr>
+                <th>Row num</th><th>\(x_1\)</th> <th class="out">\(\bar{x}_1\)</th>
+            </tr>
+            <tr>
+                <td>0</td><td>0</td><td class="out">1</td>
+            </tr><tr>
+                <td>1</td><td>1</td><td class="out">0</td>
+            </tr>
+        </table>
+        </small>
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center" >Boolean expression</span>
+        <br/>
+        \(f = \bar{x}_1 \)
+    </div>
+    <div class="image-table fragment">
+        <span style="text-align:center"> ANSI Symbol</span>
+        <br/>
+        <img class="fragment" src="2021-09-01-boolean-algebra_files/NOT_ANSI.svg" style="height:200px" />
+    </div>
+</section>
+
+
+
+<section data-markdown>
+    <textarea data-template>
+## Representations
+### ... so far
+* ANSI Symbol Networks
+* Boolean expression
+* Truth table
+### coming up next ...
+* Venn Diagrams
+* Karnaugh maps
+* Minterms/Sum-of-products
+* Maxterms/Product-of-sums
+* Timing diagrams
+* Verilog
+    </textarea>
+</section>
+
+<section data-markdown>
+    <textarea data-template>
+    ## Network to boolean expression
+
+    <img src="2021-09-01-boolean-algebra_files/network_example_no_expression.svg" style="height:200px" />
+
+    ### Boolean expression
+
+    <div class="fragment">\( g = A\bar{B} \)</div>
+    <div class="fragment">\( h = g + C \)</div>
+    <div class="fragment">\( h = g + C = A\bar{B} + C\)</div>
+    <div class="fragment">\( k = \bar{h} = \overline{A\bar{B} + C} \)</div>
+    <div class="fragment">\( f = k D \)</div>
+    <div class="fragment">\( f = k D =  \overline{(A\bar{B} + C)} D\)</div>
+    </textarea>
+</section>
+
+
+<section data-markdown>
+    <textarea data-template>
+    ## Network to truth table
+
+        <img src="2021-09-01-boolean-algebra_files/network_example_no_expression.svg" style="height:200px" />
+
+    #### Truth table
+
+    </textarea>
+</section>
+
+<section >
+    <h2> Network to truth table</h2>
+
+    <img src="2021-09-01-boolean-algebra_files/network_example_no_expression.svg" style="height:200px" />
+
+        <div>\( f = \overline{(A\bar{B} + C)} D \)</div>
+
+        <h4> Truth table</h4>
+
+        <div class="fragment" style="font-size:small">
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>\(\bar{B}\)</th><th>g</th><th>h</th><th>k</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+</tbody></table>
+        </div>
+</section>
+
+<section>
+    <h2>Truth table to Minterms</h2>
+
+        <div  class="image-table" style="font-size:60%">
+            <h4> Truth table</h4>
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+        </div>
+        <div class="image-table">
+
+        <h4>Minterms </h4>
+        <p class="fragment">List of rows where function is 1</p>
+        <div class="fragment"> \(f = m_1 + m_5 + m_{13} \)</div>
+        <br/>
+        <div class="fragment">\(f = \sum m(1, 5, 13) \) </div>
+        </div>
+</section>
+
+
+<section>
+    <h2>Minterms to Sum of products</h2>
+        <h4>Minterms </h4>
+        <div >\(f = \sum m(1, 5, 13) \) </div>
+        <hr/>
+        <div class="fragment image-table">
+            <table style="font-size:50%">
+                    <tr><td>\(m_0\)</td>    <td>\(\triangleq \bar{A}  \bar{B}  \bar{C}  \bar{D} \)</td> </tr>
+                    <tr><td>\(m_1\)</td>    <td>\(\triangleq \bar{A}  \bar{B}  \bar{C}       D  \)</td> </tr>
+                    <tr><td>\(m_2\)</td>    <td>\(\triangleq \bar{A}  \bar{B}       C   \bar{D} \)</td> </tr>
+                    <tr><td>\(m_3\)</td>    <td>\(\triangleq \bar{A}  \bar{B}       C        D  \)</td> </tr>
+                    <tr><td>\(m_4\)</td>    <td>\(\triangleq \bar{A}  \bar{B}  \bar{C}  \bar{D} \)</td> </tr>
+                    <tr><td>\(m_5\)</td>    <td>\(\triangleq \bar{A}  \bar{B}  \bar{C}       D  \)</td> </tr>
+                    <tr><td>\(m_6\)</td>    <td>\(\triangleq \bar{A}  \bar{B}       C   \bar{D} \)</td> </tr>
+                    <tr><td>\(m_7\)</td>    <td>\(\triangleq \bar{A}  \bar{B}       C        D  \)</td> </tr>
+                    <tr><td>\(m_8\)</td>    <td>\(\triangleq      A   \bar{B}  \bar{C}  \bar{D} \)</td> </tr>
+                    <tr><td>\(m_9\)</td>    <td>\(\triangleq      A   \bar{B}  \bar{C}       D  \)</td> </tr>
+                    <tr><td>\(m_{10}\)</td> <td>\(\triangleq      A   \bar{B}       C   \bar{D} \)</td> </tr>
+                    <tr><td>\(m_{11}\)</td> <td>\(\triangleq      A   \bar{B}       C        D  \)</td> </tr>
+                    <tr><td>\(m_{12}\)</td> <td>\(\triangleq      A        B   \bar{C}  \bar{D} \)</td> </tr>
+                    <tr><td>\(m_{13}\)</td> <td>\(\triangleq      A        B   \bar{C}       D  \)</td> </tr>
+                    <tr><td>\(m_{14}\)</td> <td>\(\triangleq      A        B        C   \bar{D} \)</td> </tr>
+                    <tr><td>\(m_{15}\)</td> <td>\(\triangleq      A        B        C        D  \)</td> </tr>
+            </table>
+        </div>
+        <div class="image-table">
+        <h4>Sum of products </h4>
+        <div class="fragment" style="font-size: 80%">
+            \(
+            f = \bar{A}  \bar{B}  \bar{C}       D
+            + \bar{A}  \bar{B}  \bar{C}       D
+            + A        B   \bar{C}       D \)
+        </div>
+        </div>
+</section>
+
+<section>
+    <h2>Truth table to Maxterms</h2>
+
+        <div  class="image-table" style="font-size:60%">
+            <h4> Truth table</h4>
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="image-table">
+        <h4>Maxterms </h4>
+        <p class="fragment">List of rows where function is 0</p>
+        <div class="fragment" style="font-size:smaller"> \[
+            f = M_0 \cdot M_2 \cdot M_3 \cdot M_4 \cdot M_6 \cdot M_7
+            \\
+            \cdot M_8 \cdot M_9 \cdot
+            M_{10} \cdot M_{11} \cdot M_{12} \cdot M_{14}
+            \\
+            \cdot M_{15}
+            \]</div>
+        <br/>
+        <div class="fragment" style="font-size:60%">\(
+            f = \prod M(0, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 14, 15) \) </div>
+        </div>
+</section>
+
+<section>
+    <h2>Maxterms to products of sums</h2>
+        <h4>Maxterms </h4>
+        <div class="fragment">\(f = \prod M(0, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 14, 15) \) </div>
+        <hr/>
+        <div class="fragment image-table">
+            <table style="font-size:55%">
+                    <tr><td>\(M_0\)</td>    <td>\(\triangleq      A  +      B  +      C  +      D \)</td> </tr>
+                    <tr><td>\(M_1\)</td>    <td>\(\triangleq      A  +      B  +      C  + \bar{D}\)</td> </tr>
+                    <tr><td>\(M_2\)</td>    <td>\(\triangleq      A  +      B  + \bar{C} +      D \)</td> </tr>
+                    <tr><td>\(M_3\)</td>    <td>\(\triangleq      A  +      B  + \bar{C} + \bar{D}\)</td> </tr>
+                    <tr><td>\(M_4\)</td>    <td>\(\triangleq      A  + \bar{B} +      C  +      D \)</td> </tr>
+                    <tr><td>\(M_5\)</td>    <td>\(\triangleq      A  + \bar{B} +      C  + \bar{D} \)</td> </tr>
+                    <tr><td>\(M_6\)</td>    <td>\(\triangleq      A  + \bar{B} + \bar{C} +      D \)</td> </tr>
+                    <tr><td>\(M_7\)</td>    <td>\(\triangleq      A  + \bar{B} + \bar{C} + \bar{D}\)</td> </tr>
+                    <tr><td>\(M_8\)</td>    <td>\(\triangleq\bar{A}  +      B  + \bar{C} +      D \)</td> </tr>
+                    <tr><td>\(M_9\)</td>    <td>\(\triangleq\bar{A}  +      B  + \bar{C} + \bar{D}\)</td> </tr>
+                    <tr><td>\(M_{10}\)</td> <td>\(\triangleq\bar{A}  +      B  + \bar{C} +      D \)</td> </tr>
+                    <tr><td>\(M_{11}\)</td> <td>\(\triangleq\bar{A}  +      B  + \bar{C} + \bar{D}\)</td> </tr>
+                    <tr><td>\(M_{12}\)</td> <td>\(\triangleq\bar{A}  + \bar{B} + \bar{C} +      D \)</td> </tr>
+                    <tr><td>\(M_{13}\)</td> <td>\(\triangleq\bar{A}  + \bar{B} + \bar{C} + \bar{D} \)</td> </tr>
+                    <tr><td>\(M_{14}\)</td> <td>\(\triangleq\bar{A}  + \bar{B} + \bar{C} +      D \)</td> </tr>
+                    <tr><td>\(M_{15}\)</td> <td>\(\triangleq\bar{A}  + \bar{B} + \bar{C} + \bar{D}\)</td> </tr>
+            </table>
+        </div>
+        <div class="image-table">
+        <h4>Products of sums</h4>
+        <div class="fragment" style="font-size:60%">
+            \begin{multline}
+            f = (A + B + C + D)(     A  +      B  + \bar{C} +      D ) \dots
+            \\
+            (\bar{A}  + \bar{B} + \bar{C} +      D)
+            (\bar{A}  + \bar{B} + \bar{C} + \bar{D})
+            \end{multline}
+        </div>
+        </div>
+</section>
+
+
+<section>
+    <section>
+        <h2>VENN Diagrams for gates</h2>
+        <div class="image-table">
+            <span style="text-align:center"> NOT Venn Diagram</span>
+            <br/>
+            <small>\( f = \bar{x}_1 \); \(f = \bar{x}_2\)</small>
+            <br/>
+            <img src="2021-09-01-boolean-algebra_files/NOT_Venn_x1.svg" style="width:200px" />
+            <img src="2021-09-01-boolean-algebra_files/NOT_Venn_x2.svg" style="width:200px" />
+        </div>
+        <div class="image-table">
+            <span style="text-align:center"> AND Venn Diagram</span>
+            <br/>
+            <small>\( f = x_1 \cdot x_2 \)</small>
+            <br/>
+            <img src="2021-09-01-boolean-algebra_files/AND_Venn.svg" style="height:200px" />
+        </div>
+        <div class="image-table">
+            <span style="text-align:center"> OR Venn Diagram</span>
+            <br/>
+            <small>\( f = x_1 + x_2 \)</small>
+            <br/>
+            <img src="2021-09-01-boolean-algebra_files/OR_Venn.svg" style="height:200px" />
+        </div>
+        <br/>
+    </section>
+</section>
+
+<style>
+ .reveal table.k-map tr td {
+     border-style: solid;
+ }
+ .reveal table.k-map tr th {
+     border-style: solid;
+ }
+ .reveal table.k-map tr:first-child th {
+     border-style: none;
+ }
+ .reveal table.k-map tr td:first-child {
+     border-style: none;
+ }
+ .reveal table.k-map tr th:first-child {
+     border-style: none;
+ }
+ .reveal table.k-map tr:last-child td {
+     border-bottom: solid;
+ }
+ .reveal table.k-map tr:last-child td:first-child {
+     border-bottom: none;
+ }
+</style>
+
+<section>
+    <section>
+        <h2>Karnaugh maps for gates</h2>
+        <div class="image-table">
+            <span style="text-align:center"> AND K-map</span>
+            <br/>
+            <small>\( f = x_1 \cdot x_2 \)</small>
+
+            <table class="k-map">
+                <tr>
+                    <th></th><th>\(\bar{x}_1\)</th> <th>\(x_1\)</th>
+                </tr>
+                <tr>
+                    <td>\(\bar{x}_2\)</td><td>0</td><td>0</td>
+                </tr><tr>
+                    <td>\(x_2\)</td><td>0</td><td>1</td>
+                </tr>
+            </table>
+        </small>
+        </div>
+        <div class="image-table">
+            <span style="text-align:center"> OR K-map</span>
+            <br/>
+            <small>\( f = x_1 + x_2 \)</small>
+            <br/>
+            <table class="k-map">
+                <tr>
+                    <th></th><th>\(\bar{x}_1\)</th> <th>\(x_1\)</th>
+                </tr>
+                <tr>
+                    <td>\(\bar{x}_2\)</td><td>0</td><td>1</td>
+                </tr><tr>
+                    <td>\(x_2\)</td><td>1</td><td>1</td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <div class="image-table">
+            <span style="text-align:center"> NOT K-map</span>
+            <br/>
+            <small>\( f = \bar{x}_1 \)</small>
+            <br/>
+            <table class="k-map">
+                <tr>
+                    <th>\(\bar{x}_1\)</th> <th>\(x_1\)</th>
+                </tr>
+                <tr>
+                    <td style="border:solid">1</td><td>0</td>
+            </table>
+        </div>
+    </section>
+</section>
+
+<style>
+ .reveal table.k-map-4 tr td {
+     border-style: solid;
+ }
+ .reveal table.k-map-4 tr th {
+     border-style: solid;
+ }
+ .reveal table.k-map-4 tr:first-child th {
+     border-style: dashed;
+ }
+ .reveal table.k-map-4 tr:nth-child(2) th {
+     border-style: dashed;
+ }
+
+ .reveal table.k-map-4 tr td:first-child {
+     border-style: dashed;
+ }
+
+
+ .reveal table.k-map-4 tr th:first-child {
+     border-style: dashed;
+ }
+
+ .reveal table.k-map-4 tr:first-child th:first-child {
+     border-style: none;
+ }
+ .reveal table.k-map-4 tr:first-child th:nth-child(2) {
+     border-style: none;
+ }
+ .reveal table.k-map-4 tr:nth-child(2) th:first-child {
+     border-style: none;
+ }
+ .reveal table.k-map-4 tr:nth-child(2) th:nth-child(2) {
+     border-style: none;
+ }
+
+ .reveal table.k-map-4 tr th:nth-child(2) {
+     border-style: dashed;
+ }
+
+ .reveal table.k-map-4 tr:last-child td {
+     border-bottom: solid;
+ }
+
+ .reveal table.k-map-4 tr:last-child th:first-child {
+     border-bottom: dashed;
+ }
+</style>
+
+<section>
+    <h2>Truth table to K-map</h2>
+        <div  class="image-table" style="font-size:70%">
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+        </div>
+        <div class="image-table">
+    <h4>K-map</h4>
+
+</section>
+
+<section>
+    <h2>Truth table to K-map</h2>
+        <div  class="image-table" style="font-size:70%">
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+        </div>
+        <div class="image-table">
+    <h4>K-map</h4>
+
+    <table class="k-map-4 fragment">
+        <tr> <th></th><th></th><th colspan="2">\(\bar{A}\)</th> <th colspan="2">\(A \)</th> </tr>
+        <tr> <th></th><th></th><th >\(\bar{B}\)</th> <th colspan="2" style="text-align:center">\(B \)</th> <th>\(\bar{B}\)</th></tr>
+        <tr> <th rowspan="2">\(\bar{C}\)</th><th>\(\bar{D}\)</th>
+            <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
+        <tr> <th rowspan="2">\(D\)</th>
+            <td>1</td> <td>1</td> <td>0</td> <td>0</td>  </tr>
+        <tr> <th rowspan="2" style="border-bottom:dashed">\(C\)</th>
+            <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
+        <tr> <th >\(\bar{D}\)</th>
+            <td>0</td> <td>0</td> <td>1</td> <td>0</td>  </tr>
+    </table>
+        </div>
+</section>
+
+<section>
+    <h2>K-map to expression</h2>
+    <div class="image-table">
+        <h4>K-map</h4>
+        <table class="k-map-4">
+            <tr> <th></th><th></th><th colspan="2">\(\bar{A}\)</th> <th colspan="2">\(A \)</th> </tr>
+            <tr> <th></th><th></th><th >\(\bar{B}\)</th> <th colspan="2" style="text-align:center">\(B \)</th> <th>\(\bar{B}\)</th></tr>
+            <tr> <th rowspan="2">\(\bar{C}\)</th><th>\(\bar{D}\)</th>
+                <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
+            <tr> <th rowspan="2">\(D\)</th>
+                <td>1</td> <td>1</td> <td>0</td> <td>0</td>  </tr>
+            <tr> <th rowspan="2" style="border-bottom:dashed">\(C\)</th>
+                <td>0</td> <td>0</td> <td>0</td> <td>0</td>  </tr>
+            <tr> <th >\(\bar{D}\)</th>
+                <td>0</td> <td>0</td> <td>1</td> <td>0</td>  </tr>
+        </table>
+    </div>
+    <div class="image-table ">
+        <h4>Expression</h4>
+        <div class="fragment">
+        \(f = \bar{A}\bar{C}D + ABC\bar{D} \)
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2> Expression to truth table</h2>
+    <div class="image-table ">
+        <h4>Expression</h4>
+            \(f = \bar{A}\bar{C}D + ABC\bar{D} \)
+    </div>
+    <div class="image-table">
+        <h4>Truth table</h4>
+        <table class="truth-table fragment " style="font-size:50%">
+            <thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th>
+                <th>\(\bar{A}\bar{C}D\)</th>
+                <th>\(ABC\bar{D}\)</th>
+                <th>f</th></tr></thead><tbody>
+                    <tr><td>0 </td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>1 </td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>2 </td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>3 </td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>4 </td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>5 </td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+                    <tr><td>6 </td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>7 </td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>8 </td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>9 </td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                    <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+                    <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+                    <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</tbody></table>
+
+    </div>
+</section>
+
+<section>
+    <h2>Truth table to timing diagram</h2>
+        <div  class="image-table" style="font-size:70%">
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+        </div>
+        <div class="image-table">
+            <h4>Timing diagram</h4>
+        </div>
+</section>
+
+<section>
+    <h2>Truth table to timing diagram</h2>
+        <div  class="image-table" style="font-size:70%">
+<table class="truth-table">
+<thead><tr><th>Row num</th><th>A</th><th>B</th><th>C</th><th>D</th><th>f</th></tr></thead><tbody>
+ <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>3</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>5</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>7</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>8</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>9</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+ <tr><td>10</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>11</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+ <tr><td>12</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+ <tr><td>13</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr>
+ <tr><td>14</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
+ <tr><td>15</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+</tbody></table>
+        </div>
+        <div class="image-table">
+            <h4>Timing diagram</h4>
+            <img src="2021-09-01-boolean-algebra_files/timing-diagram.svg" style="width:400px" />
+        </div>
+</section>
+
+<section>
+    <h2>Functionally equiv diagrams</h2>
+    <img src="2021-09-01-boolean-algebra_files/functionally-equiv-networks.svg"
+         style="height:500px" />
+</section>
+
+<section><h2>Thanks and Questions?</h2></section>
+
+	<script>
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				height: 900,
+				width: 1200,
+				controls: false,
+				progress: true,
+				history: true,
+				center: false,
+				mouseWheel: false,
+				previewLinks: false,
+                slideNumber: true,
+                // Transition style
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+//				autoSlide: 5000,
+				animate: {
+					autoplay: true
+				},
+				math: {
+					mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+				},
+				menu: { // Menu works best with font-awesome installed: sudo apt-get install fonts-font-awesome
+					themes: false,
+					transitions: false,
+					markers: true,
+					hideMissingTitles: true,
+					custom: [
+				            { title: 'Plugins', icon: '<i class="fa fa-external-link-alt"></i>', src: 'toc.html' },
+				            { title: 'About', icon: '<i class="fa fa-info"></i>', src: 'about.html' }
+				        ]
+				},
+                chalkboard: {
+                    src: "2021-08-30-chalkboard.json"
+                },
+				plugins: [ RevealMarkdown, RevealHighlight,
+                           RevealMath, // RevealAudioSlideshow, RevealAudioRecorder,
+                           RevealAnimate, RevealChalkboard ],
+			});
+	</script>
+
+</body>
+</html>
