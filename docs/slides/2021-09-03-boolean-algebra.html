@@ -337,7 +337,7 @@
 module examplefunction1(A, B, C, D, f);
     input A, B, C, D;
     output f;
-    assign f = (~(A&(~B) + C))&D;
+    assign f = (~(A&(~B) | C))&D;
 endmodule
     </code></pre>
 
@@ -387,7 +387,9 @@ endmodule
         </li><li class="fragment">
             \( x + x = x \)
         </li><li class="fragment">
-            \( x \cdot \bar{x} = 1 \)
+            \( x \cdot \bar{x} = 0 \)
+            <br/>
+            \( x + \bar{x} = 1 \)
         </li><li class="fragment">
             \(\bar{\bar{x}} = x \)
         </li></ul>
@@ -404,8 +406,8 @@ endmodule
         <tr class=" fragment"> <td>\(x + y = y + x\)</td> </tr>
 
 
-        <tr class=" fragment" > <td>\(x \cdot (y \cdot z) = y \cdot x\)</td><td rowspan="2">Associative</td> </tr>
-        <tr class=" fragment" > <td>\(x + y = y + x\)</td> </tr>
+        <tr class=" fragment" > <td>\(x \cdot (y \cdot z) = (x \cdot y) \cdot z\)</td><td rowspan="2">Associative</td> </tr>
+        <tr class=" fragment" > <td>\(x + (y + z)= (x + y) + z\)</td> </tr>
 
         <tr class=" fragment" > <td>\(x \cdot (y + z) = x\cdot y + x \cdot z\)</td><td rowspan="2">Distributive</td> </tr>
         <tr class=" fragment" > <td>\(x + y\cdot z = (x+y) \cdot (x+z)\)</td> </tr>
@@ -672,6 +674,7 @@ endmodule
 				},
                 chalkboard: {
                     theme: 'whiteboard',
+                    src: '2021-09-03-boolean-algebra_files/chalkboard.json'
                 },
 				plugins: [ RevealMarkdown, RevealHighlight,
                            RevealMath, // RevealAudioSlideshow, RevealAudioRecorder,
