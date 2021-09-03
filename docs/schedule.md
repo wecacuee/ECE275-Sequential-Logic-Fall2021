@@ -3,14 +3,14 @@ layout: page
 ---
 # Schedule
 
-|       |   | Lecture topic                                                                                                                    | Reading assignment before the lecture | Homework due                                         |
+|       |   | Lecture topic                                                                                                                    | Reading | Homework due                                         |
 | ----- | - | --------------------------------------------------------------                                                                   | ------------------------------------- | -------------------------                            |
 | 8/30  | M | [Course structure, Combinatorial vs Sequential circuits]({{site.baseurl}}/slides/2021-08-29-what-to-expect-from-the-course.html) |                                       |                                                      |
 | 9/1   | W | [Representations of digial systems]({{site.baseurl}}/slides/2021-09-01-boolean-algebra.html)                                     |                                       |                                                      |
 | 9/3   | F | [Boolean algebra]({{site.baseurl}}/slides/2021-09-03-boolean-algebra.html) | Read through the end of Section 2.5.  |                                                      |
 | 9/6   | M | Labor day, No class                                                                                                              |                                       |                                                      |
-| 9/8   | W | More boolean algebra, canonical forms                                                                                            |                                       | [Homework 1 due]({{site.baseurl}}/homeworks/hw1/hw1.pdf) |
-| 9/10  | F |                                                                                                                                  |                                       |                                                      |
+| 9/8   | W | More boolean algebra, canonical forms                                                                                            |                                       |  |
+| 9/10  | F |                                                                                                                                  |                                       | [Homework 1 due]({{site.baseurl}}/homeworks/hw1/hw1.pdf)|
 | 9/13  | M | Optimization of circuits                                                                                                         |                                       |                                                      |
 | 9/15  | W |                                                                                                                                  |                                       | Homework 2                                           |
 | 9/17  | F |                                                                                                                                  |                                       |                                                      |

@@ -28,7 +28,7 @@ plugins:
 plainwhite:
   name: Sequential Logic Systems (ECE275)
   tagline: |
-     Boolean algebra, Flip-flops, K-Maps, VHDL
+     Boolean algebra, Flip-flops, K-Maps, Verilog
 
   sitemap: true
 
