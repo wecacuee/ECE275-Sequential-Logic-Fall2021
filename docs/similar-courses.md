@@ -71,3 +71,6 @@ Book: <http://www.cs.ucr.edu/~vahid/dd/>
 ### Circuit Verse by IIIT Bangolore
   + <https://learn.circuitverse.org/docs/logic-design/>
 
+
+## Verilog examples
+  + <https://verilogguide.readthedocs.io/en/latest/verilog/firstproject.html>
