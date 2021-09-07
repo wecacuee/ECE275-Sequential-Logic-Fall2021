@@ -253,11 +253,52 @@
     \[ f = x_1 \bx_3 \bx_4 + x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 \]
 </section>
 
+<section>
+<h2>Soln</h2>
+<div style="font-size:70%">
+\begin{align}
+    f &= x_1 \bx_3 \bx_4 + x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 & 
+    \\
+    &= x_1 (x_2 + \bx_2) \bx_3 \bx_4 + x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 & \because 1 = x_2 + \bx_2
+    \\
+    &= x_1 x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 \bx_4 + x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 & \text{ by distributive prop. }
+    \\
+    &= (x_1 + 1) x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 (x_4  + 1) & \text{ by distributive prop. }
+    \\
+    &= x_2 \bx_3 \bx_4 + x_1 \bx_2 \bx_3 & \text{ by absorption }
+\end{align}
+    This is the simplest sum-of-product form.
+</div>
+</section>
+
 <section >
     <h2>Sample homework problems</h2>
     <p>Use algebraic manipulation to prove that</p>
-    \[ x + yz = (x+y)(y+z) \]
+    \[ x + yz = (x+y)(x+z) \]
 </section>
+
+<section>
+    <h2>Soln</h2>
+    To prove: \( x + yz = (x+y)(x+z) \)
+
+    <div style="font-size:80%">
+    \begin{align}
+    \text{RHS} &= (x+y)(x+z)
+        \\
+        &= x(x+z)+ y(x+z) & \text{ by distributive prop}
+        \\
+        &= x\cdot x + x\cdot z + y \cdot x + y \cdot z & \text{ by distributive prop }
+        \\
+        &= x + xz + yx + yz & \because x \cdot x = x
+        \\
+        &= x(1 + z + y) + yz & \text{by commutative prop}
+        \\
+        &= x + yz = \text{LHS} & \text{ by absorption }
+    \end{align}
+    </div>
+
+</section>
+
 
 <section>
     <h2>Design of three-way light control</h2>
