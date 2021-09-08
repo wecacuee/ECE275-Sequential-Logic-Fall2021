@@ -4,9 +4,9 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Designing circuits</title>
+	<title>Boolean algebra review</title>
 
-	<meta name="description" content="What to expect from ECE275: Symbolic logic systems">
+	<meta name="description" content="">
 	<meta name="author" content="Vikas Dhiman">
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -160,10 +160,91 @@
 		<div class="slides">
 
 
-<section class="center"> <h2>ECE 275: Designing circuits</h2>
+<section class="center"> <h2>ECE 275: Boolean algebra review</h2>
 	<p>
 		<a href="https://vikasdhiman.info/ECE275-Sequential-Logic/">https://vikasdhiman.info/ECE275-Sequential-Logic/</a>
 	</p>
+</section>
+
+<section>
+    <h2>Basic gates</h2>
+    <div class="image-table">
+        <span style="text-align:center"> AND gate</span>
+        <br/>
+        <small>\( L_{\text{AND}}(x_1, x_2) = x_1 \cdot x_2 \)</small>
+        <img src="2021-09-01-boolean-algebra_files/AND-circuit.png" style="height:200px" />
+    </div>
+    <div class="image-table">
+        <span style="text-align:center"> OR gate</span>
+        <br/>
+        <small>\( L_{\text{OR}}(x_1, x_2) = x_1 + x_2 \)</small>
+        <img src="2021-09-01-boolean-algebra_files/OR-circuit.png" style="height:200px" />
+    </div>
+    <br/>
+    <div class="image-table">
+        <span style="text-align:center"> NOT gate</span>
+        <br/>
+        <small>\( L_{\text{NOT}}(x_1) = \bar{x}_1 \)</small>
+        <br/>
+        <img src="2021-09-01-boolean-algebra_files/NOT-circuit.png" style="height:200px" />
+    </div>
+    <span class="source">Source:Verilog 3rd, Brown and Vranesic 2014</span>
+</section>
+
+<style>
+ .image-list li {
+     display: inline-block;
+     width: 300px;
+     font-size: 50%;
+     text-align:center;
+ }
+</style>
+
+<section>
+    <h2>Boolean algebra</h2>
+    <h4>Single variable Theorems</h4>
+    <ul class="image-list"><li>
+        <img src="2021-09-08-designing-circuits_files/SVT-0.svg" style="width:300px" />
+        \( x \cdot 0 = ? \)
+        <p class="fragment"> \( x \cdot 0 = 0 \)</p>
+    </li><li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-1.svg" style="width:300px" />
+        \( x + 1 = ? \)
+        <p class="fragment"> \( x + 1 = 1 \)</p>
+    </li><li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-2.svg" style="width:300px" />
+        \( x \cdot 1 = ? \)
+        <p class="fragment"> \( x \cdot 1 = x \)</p>
+    </li><li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-3.svg" style="width:300px" />
+        \( x + 0 = ? \)
+        <p class="fragment"> \( x + 0 = x \)</p>
+    </li><li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-4.svg" style="width:300px" />
+        \( x \cdot x = ? \)
+        <p class="fragment"> \( x \cdot x = x \)</p>
+    </li><li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-5.svg" style="width:300px" />
+        \( x + x = ? \)
+        <p class="fragment">\( x + x = x \)</p>
+    </li>
+    </ul>
+</section>
+<section>
+    <ul class="image-list">
+        <li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-6.svg" style="width:300px" />
+        \( x \cdot \bar{x} = ? \)
+        <p class="fragment">
+            \( x \cdot \bar{x} = 0 \)
+        </p>
+    </li><li class="fragment">
+        <img src="2021-09-08-designing-circuits_files/SVT-7.svg" style="width:300px" />
+        \( x + \bar{x} = ? \)
+        <p class="fragment"> \( x + \bar{x} = 1 \)</p>
+    </li><li class="fragment">
+        \(\bar{\bar{x}} = x \)
+    </li></ul>
 </section>
 
 <section>
