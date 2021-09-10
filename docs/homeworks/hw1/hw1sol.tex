@@ -475,21 +475,26 @@ Simplest SOP expression is, $f(x_1, x_2, x_3) = {\color{green}x_1 \bx_3} +
 Design the simplest product-of-sums circuit that implements the function $f (x_1 , x_2 , x_3 ) = \prod M (0, 2, 5)$.~\cite[Prob 2.22]{brown2013fundamentals}[10 marks]
 \end{prob}
 \subsubsection*{Solution}
+\begin{align}
+\bar{f}(x_1, x_2, x_3) = \sum m(0, 2, 5)
+\end{align}
+
+The K-map is for $\bar{f}$ is:
 \begin{tabular}{c|c|c|c|c}
   \toprule
   & \multicolumn{2}{c|}{$\bx_1$} & \multicolumn{2}{c}{$x_1$}
   \\
   & $\bx_2$ & \multicolumn{2}{c|}{$x_2$} & $\bx_2$
   \\ \midrule
-  $\bx_3$ & {\color{red}0} & {\color{red}0} & 1 & 1
+  $\bx_3$ & {\color{red}1} & {\color{red}1} & 0 & 0
   \\
-  $x_3$ & 1 & 1 & 1 & {\color{green}0}
+  $x_3$ & 0 & 0 & 0 & {\color{green}1}
   \\\bottomrule
 \end{tabular}.
 \\
+Simplest SOP expression for $\bar{f}(x_1, x_2, x_3) = {\color{red}\bx_1 \bx_3} + {\color{green}x_1\bx_2 x_3}$.
 
-Simplest POS expression is, $f(x_1, x_2, x_3) = {\color{red}(x_1 +
-  x_3)}{\color{green}(\bx_1 + x_2 + \bx_3)} $.
+By DeMorgan's theorem, we get the simplest POS expression is, $f(x_1, x_2, x_3) = {\color{red}(x_1 + x_3)}{\color{green}(\bx_1 + x_2 + \bx_3)} $.
 
 \includegraphics[width=\linewidth]{fig/prob-8-pos-circuit.pdf}
 
