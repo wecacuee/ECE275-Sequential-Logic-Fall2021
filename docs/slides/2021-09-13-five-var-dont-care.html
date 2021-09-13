@@ -249,9 +249,19 @@
         </li><li class="fragment" data-fragment-index="8">
             EPI's are <span class="fragment" data-fragment-index="9"> \( \bx_1 \) and \( x_1 x_2 x_3 \) </span>
         </li><li class="fragment" data-fragment-index="11">
-            Cost is <span class="fragment" data-fragment-index="12"> 7 = 4 inputs + 2 AND gate + 1 OR gate </span>
+            Cost is <span class="fragment" data-fragment-index="12"> 9 = 6 inputs + 2 AND gate + 1 OR gate </span>
         </li></ul>
     </div>
+</section>
+
+<section>
+    Find the cost of the \( g = \overline{(x_1\bx_2 + x_3)}(\bx_4 + x_4)\)
+    <p class="fragment">Cost = 2 AND + 2 OR + 1 NOT + 5 inputs = 10 </p>
+</section>
+
+<section>
+    Find the cost of the \( f = (x_2 + x_3)(x_3 + x_4)(\bx_1 + \bx_2 + \bx_3 + \bx_4)\)
+    <p class="fragment">Cost = 3 OR + 1 AND + (8+3) inputs = 15 </p>
 </section>
 
 <section>
@@ -297,7 +307,7 @@
     \[ f(x_1, x_2, x_3) = \prod M(4, 5, 6) \]
     <img src="2021-09-13-five-var-dont-care_files/fig-2.60.png" width="400px" />
     \[ f(x_1, x_2, x_3) = (\bx_1 + x_3)(\bx_1 + x_2) \]
-    <p>Cost = 5 = 2 inputs + 2 OR gate + 1 AND gate</p>
+    <p>Cost = 7 = 6 inputs + 2 OR gate + 1 AND gate</p>
 </section>
 
 <section>
@@ -349,7 +359,7 @@
         \[f = \color{blue}{x_2 \bx_3} + \color{red}{x_3 \bx_4} \]
         <br/>
         <br/>
-        <p>Cost = 4 inputs + 2 AND + 1 OR = 7</p>
+        <p>Cost = 6 inputs + 2 AND + 1 OR = 7</p>
     </div>
     <div class="image-table">
         <table  class="k-map-4 " style="font-size:60%">
@@ -366,7 +376,7 @@
         </table>
         \[\bar{f} = \color{blue}{\bx_2 \bx_3} + \color{red}{\bx_3 x_4} \]
         \[f = \color{blue}{(x_2 + x_3)} \color{red}{(x_3 + \bx_4)} \]
-        <p> Cost = 4 inputs + 2 OR + 1 AND = 7 </p>
+        <p> Cost = 6 inputs + 2 OR + 1 AND = 7 </p>
     </div>
 </section>
 
