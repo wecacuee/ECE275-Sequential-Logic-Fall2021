@@ -20,7 +20,7 @@ Prerequisite: ECE 177
 
 Barrows Hall Rm 105, [`vikas.dhiman@maine.edu`](mailto:vikas.dhiman@maine.edu)
 
-Office Hours: 4-5:30pm MW. Otherwise, please send me an email proposing one of the free slots in my calendar: <https://calendar.google.com/calendar/u/0/embed?src=vikas.dhiman@maine.edu&ctz=America/New_York>
+Office Hours: 4-5:30pm Mondays and Thursdays. Otherwise, please send me an email proposing one of the free slots in my calendar: <https://calendar.google.com/calendar/u/0/embed?src=vikas.dhiman@maine.edu&ctz=America/New_York>
 
 ### Pascal Francis-Mezger
 
