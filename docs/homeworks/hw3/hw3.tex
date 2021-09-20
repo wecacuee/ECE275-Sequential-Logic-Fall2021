@@ -1,0 +1,82 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\input{sym}
+\title{Homework 3}
+\author{Max marks: 70}
+\date{Due on September 27, 2021, 9 AM, before class.}
+\newtheorem{prob}{Problem}
+
+\newcommand{\bx}{\bar{x}}
+\newcommand{\by}{\bar{y}}
+\newcommand{\bz}{\bar{z}}
+\newcommand{\bA}{\bar{A}}
+\newcommand{\bB}{\bar{B}}
+\newcommand{\bC}{\bar{C}}
+\begin{document}
+
+\maketitle
+Note that to find a ``minimum-cost circuit'', you must find both the SOP and POS
+forms and compute the cost of each, and then indicate which is best.
+
+\begin{prob}
+  Derive a minimum-cost circuit that implements the function
+  $f(x_1, \dots, x_4) = \sum m(4, 7, 8, 11) + d(12, 15)$
+\end{prob}
+
+\begin{prob}
+  Derive a minimum-cost circuit that implements the function
+  $f(x_1, \dots, x_4) = \sum m(4, 6, 9, 10, 15) + d(2, 3, 5, 11, 13)$
+\end{prob}
+
+\begin{prob}
+  Derive a minimum-cost circuit that implements the function
+  \begin{align*}
+    f(x_1, \dots, x_5) &= \sum m(2, 5, 6, 7, 8, 12, 13, 15, \\
+    &\qquad 18, 21, 24, 26, 28,
+      31)
+      \\
+      &\qquad + d(1, 4, 14, 23, 25, 29, 30)
+  \end{align*}
+\end{prob}
+
+\begin{prob}
+  Use Quine-McCluskey method to find the minimal SOP for $f(x, y, z) = \sum m(2,
+  3, 4, 5)$.
+  You can also implement Quine-McCluskey method in your favorite programming
+  language as algorithm.
+\end{prob}
+
+\begin{prob}
+  Use Quine-McCluskey method to find the minimal SOP for $f(x, y, z, w) = \sum
+  m(0, 1, 4, 5, 12, 13)$.
+  You can also implement Quine-McCluskey method in your favorite programming
+  language as algorithm.
+\end{prob}
+
+\begin{prob}
+  Use Quine-McCluskey method to find the minimal SOP for $f(x, y, z, w) = \sum
+  m(1, 5, 7, 8, 9, 13, 15) + d(4, 14)$.
+  You can also implement Quine-McCluskey method in your favorite programming
+  language as algorithm.
+\end{prob}
+
+\begin{prob}
+  A circuit with two outputs has to implement the following functions
+  \begin{align}
+    f(x_1, \dots, x_4) &= \sum m(0, 2, 4, 6, 7, 9) + d(10, 11)
+    \\
+    g(x_1, \dots, x_4) &= \sum m(2, 4, 9, 10, 15) + d(0, 13, 14)
+  \end{align}
+  Design a minimum-cost SOP circuit and compare its cost with combined cost of
+  two SOP circuits that implement $f$ and $g$ separately. Assume the input
+  variables in both complemented and uncomplemented forms. 
+\end{prob}
+
+
+%\bibliography{main}
+%\bibliographystyle{plain}
+\end{document}
