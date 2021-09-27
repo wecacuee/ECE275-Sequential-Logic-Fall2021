@@ -1,0 +1,45 @@
+\documentclass[onecolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\input{sym}
+\title{Homework 4}
+\author{Max marks: 40}
+\date{Due on Oct 1st, 2021, 9 AM, before class.}
+\newtheorem{prob}{Problem}
+
+\newcommand{\bx}{\bar{x}}
+\newcommand{\by}{\bar{y}}
+\newcommand{\bz}{\bar{z}}
+\newcommand{\bA}{\bar{A}}
+\newcommand{\bB}{\bar{B}}
+\newcommand{\bC}{\bar{C}}
+\begin{document}
+
+\maketitle
+\begin{prob}
+  Hazard problem: Design a hazard free SOP for $f(A,B,C,D) = \sum m(0,1,4,5,6,7,9,11,14,15)$
+\end{prob}
+
+\begin{prob}
+  Find the simplest realization of the function $f (x_1 , \dots, x_4 ) = \sum m(0, 3, 4, 7, 9, 10, 13, 14)$,
+  assuming that the logic gates have a maximum fan-in of two.
+\end{prob}
+\begin{prob}
+  Find the minimum-cost circuit for the function $f (x_1 , \dots, x_4 ) = \sum m(0, 4, 8, 13, 14, 15)$.
+  Assume that the input variables are available in uncomplemented form only. (Hint: Use
+  functional decomposition.)
+\end{prob}
+\begin{prob}
+  Use functional
+  decomposition to find the best implementation of the function $f (x_1 , \dots,
+  x_5 ) = \sum m(1, 2, 7, 9, 10, 18, 19, 25, 31) + D(0, 15, 20, 26)$. How does your implementa-
+  tion compare with the lowest-cost SOP implementation? Give the costs.
+\end{prob}
+
+
+%\bibliography{main}
+%\bibliographystyle{plain}
+\end{document}
