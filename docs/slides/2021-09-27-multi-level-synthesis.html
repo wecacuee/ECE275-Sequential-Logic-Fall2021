@@ -173,6 +173,7 @@
         \newcommand{\bB}{\bar{B}}
         \newcommand{\bC}{\bar{C}}
         \newcommand{\bD}{\bar{D}}
+        \newcommand{\bE}{\bar{E}}
         \]
     </div>
 </section>
@@ -271,7 +272,7 @@
 
 <section>
 <h2>Functional decomposition Ex2</h2>
-\[ f = \sum m(0, 6, 8, 4) \]
+\[ f = \sum m(0, 6, 8, 14) \]
 <table  class="k-map-4 " style="font-size:60%;">
     <tr> <th></th><th></th><th colspan="2">\(\bar{x}_1\)</th> <th colspan="2">\(x_1 \)</th> </tr>
     <tr> <th></th><th></th><th >\(\bar{x}_2\)</th> <th colspan="2" style="text-align:center">\(x_2 \)</th> <th>\(\bar{x}_2\)</th></tr>
@@ -290,7 +291,7 @@
 <section>
     <h2>Functional decomposition Ex3</h2>
     <table  class="k-map-4 " style="font-size:60%;display:inline-block;width:400px">
-        <tr> <th></th><th></th> <th colspan="4">\(\bx_0 \)</th> </tr>
+        <tr> <th></th><th></th> <th colspan="4">\(\bx_5 \)</th> </tr>
         <tr> <th></th><th></th><th colspan="2">\(\bar{x}_1\)</th> <th colspan="2">\(x_1 \)</th> </tr>
         <tr> <th></th><th></th><th >\(\bar{x}_2\)</th> <th colspan="2" style="text-align:center">\(x_2 \)</th> <th>\(\bar{x}_2\)</th></tr>
         <tr> <th rowspan="2">\(\bar{x}_3\)</th><th>\(\bar{x}_4\)</th>
@@ -303,7 +304,7 @@
             <td >0</td> <td >1</td> <td >1</td> <td >1</td>  </tr>
     </table>
     <table  class="k-map-4 " style="font-size:60%;display:inline-block;width:400px">
-        <tr> <th></th><th></th><th colspan="4">\(x_0 \)</th> </tr>
+        <tr> <th></th><th></th><th colspan="4">\(x_5 \)</th> </tr>
         <tr> <th></th><th></th><th colspan="2">\(\bar{x}_1\)</th> <th colspan="2">\(x_1 \)</th> </tr>
         <tr> <th></th><th></th><th >\(\bar{x}_2\)</th> <th colspan="2" style="text-align:center">\(x_2 \)</th> <th>\(\bar{x}_2\)</th></tr>
         <tr> <th rowspan="2">\(\bar{x}_3\)</th><th>\(\bar{x}_4\)</th>
@@ -320,7 +321,7 @@
 <section>
     <h2>Functional decomposition Ex3</h2>
     <table  class="k-map-4 " style="font-size:60%;display:inline-block;width:400px">
-        <tr> <th></th><th></th> <th colspan="4">\(\bx_0 \)</th> </tr>
+        <tr> <th></th><th></th> <th colspan="4">\(\bx_5 \)</th> </tr>
         <tr> <th></th><th></th><th colspan="2">\(\bar{x}_1\)</th> <th colspan="2">\(x_1 \)</th> </tr>
         <tr> <th></th><th></th><th >\(\bar{x}_2\)</th> <th colspan="2" style="text-align:center">\(x_2 \)</th> <th>\(\bar{x}_2\)</th></tr>
         <tr> <th rowspan="2">\(\bar{x}_3\)</th><th>\(\bar{x}_4\)</th>
@@ -333,7 +334,7 @@
             <td >0</td> <td >1</td> <td >1</td> <td >1</td>  </tr>
     </table>
     <table  class="k-map-4 " style="font-size:60%;display:inline-block;width:400px">
-        <tr> <th></th><th></th><th colspan="4">\(x_0 \)</th> </tr>
+        <tr> <th></th><th></th><th colspan="4">\(x_5 \)</th> </tr>
         <tr> <th></th><th></th><th colspan="2">\(\bar{x}_1\)</th> <th colspan="2">\(x_1 \)</th> </tr>
         <tr> <th></th><th></th><th >\(\bar{x}_2\)</th> <th colspan="2" style="text-align:center">\(x_2 \)</th> <th>\(\bar{x}_2\)</th></tr>
         <tr> <th rowspan="2">\(\bar{x}_3\)</th><th>\(\bar{x}_4\)</th>
@@ -346,6 +347,36 @@
             <td >1</td> <td >1</td> <td >1</td> <td >1</td>  </tr>
     </table>
     <img src="./2021-09-27-multi-level-synthesis_files/ex3-circuit.png" width="500px" />
+</section>
+
+<section>
+    <h2>Functional decomposition Ex4</h2>
+    <table  class="k-map-4 " style="font-size:60%;display:inline-block;width:400px">
+        <tr> <th></th><th></th> <th colspan="4">\(\bA \)</th> </tr>
+        <tr> <th></th><th></th><th colspan="2">\(\bB\)</th> <th colspan="2">\(B \)</th> </tr>
+        <tr> <th></th><th></th><th >\(\bC\)</th> <th colspan="2" style="text-align:center">\(C \)</th> <th>\(\bC\)</th></tr>
+        <tr> <th rowspan="2">\(\bD\)</th><th>\(\bE\)</th>
+            <td >0</td> <td >1</td> <td >1</td> <td >1</td>  </tr>
+        <tr> <th rowspan="2">\(E\)</th>
+            <td >1</td> <td >0</td> <td >0</td> <td >0</td>  </tr>
+        <tr> <th rowspan="2" style="border-bottom:dashed">\(D\)</th>
+            <td >0</td> <td >1</td> <td >1</td> <td >1</td>  </tr>
+        <tr> <th >\(\bE\)</th>
+            <td >1</td> <td >0</td> <td >0</td> <td >0</td>  </tr>
+    </table>
+    <table  class="k-map-4 " style="font-size:60%;display:inline-block;width:400px">
+        <tr> <th></th><th></th> <th colspan="4">\(\bA \)</th> </tr>
+        <tr> <th></th><th></th><th colspan="2">\(\bB\)</th> <th colspan="2">\(B \)</th> </tr>
+        <tr> <th></th><th></th><th >\(\bC\)</th> <th colspan="2" style="text-align:center">\(C \)</th> <th>\(\bC\)</th></tr>
+        <tr> <th rowspan="2">\(\bD\)</th><th>\(\bE\)</th>
+            <td >1</td> <td >0</td> <td >0</td> <td >0</td>  </tr>
+        <tr> <th rowspan="2">\(E\)</th>
+            <td >0</td> <td >1</td> <td >0</td> <td >0</td>  </tr>
+        <tr> <th rowspan="2" style="border-bottom:dashed">\(D\)</th>
+            <td >1</td> <td >0</td> <td >0</td> <td >0</td>  </tr>
+        <tr> <th >\(\bE\)</th>
+            <td >0</td> <td >1</td> <td >0</td> <td >0</td>  </tr>
+    </table>
 </section>
 
 
@@ -388,7 +419,8 @@
 				//         ]
 				// },
                 chalkboard: {
-                    theme: 'whiteboard'
+                    theme: 'whiteboard',
+                    src: './2021-09-27-multi-level-synthesis_files/chalkboard.json'
                 },
 				plugins: [ RevealMarkdown, RevealHighlight,
                            RevealMath, // RevealAudioSlideshow, RevealAudioRecorder,
