@@ -6,6 +6,9 @@
 \usepackage{amsmath,amssymb}
 \usepackage{xcolor}
 \usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{matrix,shapes,arrows,fit,tikzmark}
+
 \input{sym}
 \title{Homework 2  solution}
 \author{Max marks: 110}
@@ -21,7 +24,49 @@
 \newcommand{\cred}{\color{red}}
 \newcommand{\cg}{\color{green}}
 \newcommand{\cb}{\color{blue}}
+% Some options common to all the nodes and paths
+\tikzset{   
+  every picture/.style={remember picture,baseline},
+  every node/.style={anchor=base,align=center,outer sep=1.5pt},
+  every path/.style={thick},
+}
+
+\newcommand\marktopleft[1]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-a) at (.3em,.3em) {};%
+}
+\newcommand\markbottomright[2]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-b) at (.1em,.3em) {};%
+  \tikz[overlay,remember picture,inner sep=1pt]
+  \node[draw={#2},rounded corners,fit=(marker-#1-a.north west) (marker-#1-b.south east)] {};%
+}
+\newcommand\markpolytopleft[1]{%
+  \tikz[overlay,remember picture]%
+  \node (marker-#1-tl) at (.3em,.3em) {};%
+}
+\newcommand\markpolytopright[1]{%
+  \tikz[overlay,remember picture]%
+  \node (marker-#1-tr) at (.3em,.3em) {};%
+}
+\newcommand\markpolybottomright[1]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-br) at (.3em,.3em) {};%
+  }
+\newcommand\markpolybottomleft[2]{%
+  \tikz[overlay,remember picture]
+  \node (marker-#1-bl) at (.3em,.3em) {};%
+  \tikz[overlay,remember picture,inner sep=1pt]
+  \path [draw={#2},rounded corners]
+  (marker-#1-tl.north west) --
+  (marker-#1-tl.north east) --
+  (marker-#1-bl.south east) --
+  (marker-#1-br.south west);%
+}
+
+
 \begin{document}
+
 
 \maketitle
 
@@ -397,67 +442,129 @@ to the AND gate) = 20
 
 \begin{table*}
   \centering
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{c|c|cccccccc}
   \toprule
   && \multicolumn{4}{c|}{$\bx_1$} & \multicolumn{4}{c}{$x_1$}
     \\
     && \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c|}{$x_2$}
                & \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c}{$x_2$}
   \\
-  && $\bx_3$ & \multicolumn{2}{c|}{$x_3$} & $\bx_3$
-              & $\bx_3$ & \multicolumn{2}{c|}{$x_3$} & $\bx_3$
+  && $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$
+              & $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$
   \\ \midrule
-  \multirow{2}{*}{$\bx_4$} & $\bx_5$
-                                  & \cg 1 & \cred 1 & d & \cg 1
-                                              & \cg 1 & \cred 1 &  0 & \cg 1
+  \multirow{2}{*}{$\bx_4$} & $\bx_5$ &
+                                       \marktopleft{b1}
+                                       1 & \marktopleft{g1} 1 & \marktopleft{c2} d & \marktopleft{b2} 1
+                                              & \marktopleft{b3}  1 & \marktopleft{c1} 1 &  0 &  \marktopleft{b4}\cb 1
+    \\
+    & $x_5$ &
+              \marktopleft{r1} \marktopleft{o1}
+              1 \markbottomright{b1}{blue} & d   & 1 & 1 \markbottomright{b2}{blue} 
+                                              & \marktopleft{o2} d \markbottomright{b3}{blue} & 1&  0 &\cb 1\markbottomright{b4}{blue}
   \\
-  & $x_5$
-                                  & \cg 1 + \color{cyan} 1 & \cred d  + \color{cyan} d & 0 & \cg 1
-                                              & \cg d + \color{cyan} d & \cred 1+ \color{cyan} 1  &  0 & \cg 1
+    \multirow{2}{*}{$x_4$}   &  $x_5$ &
+                                        1 & d \markbottomright{o1}{orange} & d  & \cred 1 
+                                                    \markbottomright{r1}{red}
+                                              & \color{orange} 1 & d \markbottomright{o2}{orange} &  0 & 0
   \\
-  \multirow{2}{*}{$x_4$}   &  $x_5$
-                                  & \cb 1 + \color{cyan} 1 & \cred d + \cb d + \color{cyan} d & \cb d & \cb 1
-                                              & \color{cyan} 1 & \cred d + \color{cyan} d  &  0 & 0
-  \\
-  & $\bx_5$
-                                  & 0 & \cred 1 & 0 & 0
-                                              & 0 & \cred 1 &  0 & 0
+    & $\bx_5$ &
+                0 & \cg 1 & 1 \markbottomright{c2}{cyan} \markbottomright{g1}{green} & 0
+                                              & 0 & \color{cyan} 1 \markbottomright{c1}{cyan} &  0 & 0
   \\\bottomrule
-\end{tabular}.
-\caption{K-map for $f$ in problem 10}
+  \end{tabular}\hfill
+  \begin{tabular}{c|c|cc|cc|cc|cc}
+  \toprule
+  && \multicolumn{8}{c}{$x_1 = 0/1$}
+    \\
+    && \multicolumn{4}{c|}{$\bx_2$} & \multicolumn{4}{c}{$x_2$}
+  \\
+    && \multicolumn{2}{c}{$\bx_3$} & \multicolumn{4}{|c|}{$x_3$} & \multicolumn{2}{c}{$\bx_3$}
+  \\ \midrule
+    \multirow{4}{*}{$\bx_4$} & \multirow{2}{*}{$\bx_5$}
+    &
+      \markpolytopleft{b211}1 && 1 && d && 1 
+    \\
+    &&& 1  \markpolytopright{b211} && 1 && 0 && 1
+    \\\cmidrule{2-10}
+    & \multirow{4}{*}{$x_5$}
+    &
+      \markpolybottomleft{b211}{blue} \marktopleft{r211}1 && d && 1 && 1 
+    \\
+    &&& d \markpolybottomright{b211} && 1 && 0 && 1
+    \\\cmidrule{1-1}\cmidrule{3-10}
+    \multirow{4}{*}{$x_4$}   &  
+    &
+      1 && d && d && 1\markbottomright{r211}{red} 
+    \\
+    &&& 1 && d && 0 && 0
+    \\\cmidrule{2-10}
+    & \multirow{2}*{$\bx_5$}
+    &
+      0 && 1 && 1 && 0 
+    \\
+    &&& 0 && 1 && 0 && 0
+  \\\bottomrule
+  \end{tabular}\hfill
+  
+\caption{Two ways to represent K-map for $f$ in problem 10. Either way is correct. The essential minterm for the Essential
+  Prime implicant is indicated with the same color.}
 \label{tab:prob10}
 \end{table*}
 
 \begin{table*}
   \centering
-  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+  \begin{tabular}{c|c|cccccccc}
   \toprule
   && \multicolumn{4}{c|}{$\bx_1$} & \multicolumn{4}{c}{$x_1$}
     \\
     && \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c|}{$x_2$}
                & \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c}{$x_2$}
   \\
-  && $\bx_3$ & \multicolumn{2}{c|}{$x_3$} & $\bx_3$
-              & $\bx_3$ & \multicolumn{2}{c|}{$x_3$} & $\bx_3$
+  && $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$
+              & $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$
   \\ \midrule
   \multirow{2}{*}{$\bx_4$} & $\bx_5$
-                                  & 0 & 0 & \cred d & 0
-                                              & 0 & 0 &  \cred 1 & 0
+                                  & 0 & 0 & d & 0
+                                              & 0 & 0 &  \marktopleft{r1}\cred 1 & 0
   \\
   & $x_5$
-                                  & 0 & d  & \cred 1 & 0
+                                  & 0 & d  & 0 & 0
                                               & d & 0 &  \cred 1 & 0
   \\
   \multirow{2}{*}{$x_4$}   &  $x_5$
-                                  & 0 & d & \cred d & 0
-                                              & 0 & d  &  \cred 1 + \cb 1 & \cb 1
+                                  & 0 & d & d & 0
+                                              & 0 & d  &  \marktopleft{g1}1 &\cg 1
   \\
   & $\bx_5$
-                                  & \cg 1 & 0 & \cred 1 & \cg 1
-                                              & \cg 1 & 0 &  \cred 1 + \cb 1 & \cg 1 + \cb 1
+                                  & \marktopleft{b2} \cb 1 \markbottomright{b2}{blue} & 0 & 0 & \marktopleft{b3} \cb 1 \markbottomright{b3}{blue} 
+                                              & \marktopleft{b4} \cb 1 \markbottomright{b4}{blue} & 0 &  1 \markbottomright{r1}{red} & \marktopleft{b1} 1 \markbottomright{b1}{blue} \markbottomright{g1}{green}
   \\\bottomrule
-\end{tabular}.
-\caption{K-map for $\bar{f}$ in problem 10}
+  \end{tabular}
+  \hfill
+  \begin{tabular}{c|c|cccc}
+  \toprule
+  && \multicolumn{4}{c}{$x_1 = 0/1$}
+    \\
+    && \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c}{$x_2$}
+               
+  \\
+  && $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$
+  \\ \midrule
+  \multirow{2}{*}{$\bx_4$} & $\bx_5$
+                                  & 0/0 & 0/0 & d/\marktopleft{r21}\cred 1 & 0/0
+  \\
+  & $x_5$
+                                  & 0/d & d/0  & 0/\cred 1 & 0/0
+  \\
+  \multirow{2}{*}{$x_4$}   &  $x_5$
+                                  & 0/0 & d/d & d/\marktopleft{g31}1 & 0/\cg 1
+  \\
+  & $\bx_5$
+                                  & \marktopleft{b32}\cb 1/1\markbottomright{b32}{blue} & 0/0 & 0/1\markbottomright{r21}{red} & \marktopleft{b31}{\cb 1}/1\markbottomright{b31}{blue}\markbottomright{g31}{green}
+  \\\bottomrule
+\end{tabular}
+\caption{Two ways to represent 5-var K-map for $\bar{f}$ in problem 10. The
+  essential minterms for Essential Prime Implicants (EPI) is shown in the same color.}
 \label{tab:prob10inv}
 \end{table*}
 
@@ -596,23 +703,24 @@ f &= { \cred x_2 \bx_3 x_4 } +  { \cg x_2 x_3 \bx_4} + {\cb x_1 \bx_2 x_4} +
 \subsubsection*{Solution}
 The K-map for the function is in Table~\ref{tab:prob10}.
 \[
-  f = {\cred \bx_2 x_3 } + {\cg \bx_3 \bx_4} + {\color{cyan} \bx_2 x_5 } + {\cb \bx_1 x_4 x_5}
+  f = {\cred \bx_1 x_5 } + {\cg \bx_1 x_3 } + {\color{cyan} x_2 x_3 }
+  + {\cb \bx_3 \bx_4} + {\color{orange} \bx_2 x_5}
 \]
- Cost = 4 AND gates + 1 OR gate + (3*2 inputs per AND gate + 3 inputs to one AND
- gate + 4 inputs to one OR gate) = 18
+ Cost = 5 AND gates + 1 OR gate + (5*2 inputs per AND gate + 5 inputs to one OR gate) = 21
 
  The K-map for the function inverse is given in Table~\ref{tab:prob10inv}
  \begin{align*}
-   \bar{f} &= {\cred x_2 x_3} + {\cg \bx_3 x_4 \bx_5 } + {\cb x_1 x_2 x_4}
+   \bar{f} &= {\cred x_1 x_2 x_3} + {\cb \bx_3 x_4 \bx_5 } + {\cg x_1 x_2 x_4}
    \\
-   \implies  &f = {\cred (\bx_2 + \bx_3)}{\cg (x_3 + \bx_4 + x_5)}{\cb (\bx_1 + \bx_2 + \bx_4)}
+   \implies  &f = {\cred (\bx_1 + \bx_2 + \bx_3)}{\cb (x_3 + \bx_4 + x_5)}
+               \\&\qquad{\cg (\bx_1 + \bx_2 + \bx_4)}
  \end{align*}
- Cost = 3 OR gate + 1 AND gate + (2+3+3 inputs to the OR gates and 3 inputs to the AND gate)=15.
+ Cost = 3 OR gate + 1 AND gate + (3*3 inputs to the OR gates and 3 inputs to the AND gate)=16.
  
 \bibliography{main}
 \bibliographystyle{plain}
 
-\begin{table}
+\begin{table*}
   \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
   \toprule
   && \multicolumn{4}{c|}{$\bx_1$} & \multicolumn{4}{c}{$x_1$}
@@ -640,7 +748,34 @@ The K-map for the function is in Table~\ref{tab:prob10}.
                                               & 18 & 22 &  30 & 26
   \\\bottomrule
 \end{tabular}
-\caption{K-map for 5-variables with minterms}
-\end{table}
+\hfill
+\begin{tabular}{c|c|cccc}
+  \toprule
+  && \multicolumn{4}{c}{$x_1 = 0/1$}
+  \\
+  && \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c}{$x_2$}
+                                    
+  \\
+  && $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$
+  \\ \midrule
+  \multirow{2}{*}{$\bx_4$} & $\bx_5$
+  &
+    0/16 & 4/20 &  12/28 & 8/24
+  \\
+  & $x_5$
+  &
+    1/17 & 5/21  & 13/29 & 9/25
+  \\
+  \multirow{2}{*}{$x_4$}   &  $x_5$
+  &
+    3/19 & 7/23 &  15/31 & 11/27
+  \\
+  & $\bx_5$
+  &
+    2/18 & 6/22 & 14/30 & 10/26
+  \\\bottomrule
+\end{tabular}
+\caption{K-map for 5-variables with numbered minterms}
+\end{table*}
 
 \end{document}
