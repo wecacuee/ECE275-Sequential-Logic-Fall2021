@@ -11,3 +11,7 @@ layout: page
 # Lab supporting documents
 
 - Pin Assignments : [DE0_TOP.qsf](/lab_pdfs/DE0_TOP.qsf)
+
+# Prelabs
+
+- Prelab for Lab 5 : [Lab 5 Prelab](/lab_pdfs/ECE275_Lab5_Prelab.pdf)
