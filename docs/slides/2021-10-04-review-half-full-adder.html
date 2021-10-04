@@ -209,30 +209,6 @@
     </li></ul>
 </section>
 
-<section>
-    <h2>Design a 3-bit 1's complement circuit</h2>
-    that complements a  3-bit signed magnitude representation \( x_2 x_1 x_0 \)
-</section>
-
-<section>
-    <h2>Half adder</h2>
-    Design a Multi-output circuit that adds two 1-bit binary numbers \(x_0\) and \(y_0\) and outputs a sum and carry bit.
-    \[ s_0 = (x_0 \boxplus y_0) // 2  \]
-    \[ c_0 = ( x_0 \boxplus y_0 ) \% 2 \]
-</section>
-
-<section>
-    <h2>Full adder</h2>
-    Design a Multi-output circuit that adds three 1-bit binary numbers \(x_1\), \(y_1\) and \(c_0\) outputs a sum and carry bit.
-    \[ s_1 = ( x_1 \boxplus y_1 \boxplus c_0) // 2 \]
-    \[ c_1 = ( x_1 \boxplus y_1 \boxplus c_0 ) \% 2 \]
-</section>
-
-<section>
-    <h2>Decomposed Full adder</h2>
-    Design a Full adder in terms of two Half Adders
-</section>
-
 <section style="font-size:75%">
     <img src="./2021-10-04-review-half-full-adder_files/gumball_factory.png" width="500px" />
     <br/>
@@ -264,6 +240,7 @@
 </section>
 
 <section>
+    <h2>Practice problem</h2>
     \[ f(x_1, \dots, x_4) = \sum m(0, 2, 4, 5, 7, 8, 9, 15) \]
     <div class="source">Brown and Vranesic 2013, Problem 8.18</div>
     <ul><li>
@@ -278,15 +255,36 @@
 </section>
 
 <section>
-    \[ f(x_1, \dots, x_4) = \sum m(0, 2, 4, 5, 7, 8, 9, 15) \]
+    <h2>Design a 3-bit 1's complement circuit</h2>
+    that complements a  3-bit signed magnitude representation \( x_2 x_1 x_0 \)
 </section>
 
 <section>
-    \[ f(x_1, \dots, x_4) = \sum m(0, 2, 4, 5, 7, 8, 9, 15) \]
+    <h2>Half adder</h2>
+    Design a Multi-output circuit that adds two 1-bit binary numbers \(x_0\) and \(y_0\) and outputs a sum and carry bit.
+    \[ s_0 = (x_0 \boxplus y_0) // 2  \]
+    \[ c_0 = ( x_0 \boxplus y_0 ) \% 2 \]
 </section>
 
 <section>
-    \[ f(x_1, \dots, x_4) = \sum m(0, 2, 4, 5, 7, 8, 9, 15) \]
+    <h2>Full adder</h2>
+    Design a Multi-output circuit that adds three 1-bit binary numbers \(x_1\), \(y_1\) and \(c_0\) outputs a sum and carry bit.
+    \[ s_1 = ( x_1 \boxplus y_1 \boxplus c_0) // 2 \]
+    \[ c_1 = ( x_1 \boxplus y_1 \boxplus c_0 ) \% 2 \]
+</section>
+
+<section>
+    <h2>Decomposed Full adder</h2>
+    Design a Full adder in terms of two Half Adders
+</section>
+
+<section>
+    <h2>Ripple carry adder</h2>
+    Design a 4-bit adder using 4 Full adders
+</section>
+
+<section>
+    <h2>Gray code</h2>
 </section>
 
 
@@ -329,7 +327,8 @@
 				//         ]
 				// },
                 chalkboard: {
-                    theme: 'whiteboard'
+                    theme: 'whiteboard',
+                    src: './2021-10-04-review-half-full-adder_files/chalkboard.json'
                 },
 				plugins: [ RevealMarkdown, RevealHighlight,
                            RevealMath, // RevealAudioSlideshow, RevealAudioRecorder,
