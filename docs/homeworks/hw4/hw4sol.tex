@@ -1,0 +1,89 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{multirow}
+\usetikzlibrary{matrix,shapes,arrows,fit,tikzmark}
+
+\input{sym}
+\title{Homework 4}
+\author{Max marks: 40}
+\date{Due on Oct 1st, 2021, 9 AM, before class.}
+\newtheorem{prob}{Problem}
+
+\newcommand{\bx}{\bar{x}}
+\newcommand{\by}{\bar{y}}
+\newcommand{\bz}{\bar{z}}
+\newcommand{\bA}{\bar{A}}
+\newcommand{\bB}{\bar{B}}
+\newcommand{\bC}{\bar{C}}
+\newcommand{\bD}{\bar{D}}
+\newcommand\marktopleft[1]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-a) at (.3em,.3em) {};%
+}
+\newcommand\markbottomright[2]{%
+  \tikz[overlay,remember picture] 
+  \node (marker-#1-b) at (.1em,.3em) {};%
+  \tikz[overlay,remember picture,inner sep=1pt]
+  \node[draw={#2},rounded corners,fit=(marker-#1-a.north west) (marker-#1-b.south east)] {};%
+}
+
+\begin{document}
+
+\maketitle
+\begin{prob}
+  Hazard problem: Design a hazard free SOP for $f(A,B,C,D) = \sum m(0,1,4,5,6,7,9,11,14,15)$
+\end{prob}
+\subsubsection*{Solution}
+The K-map for $f$ is
+\\
+\begin{tabular}{cc|cccc}
+  \toprule
+  && \multicolumn{2}{c|}{$\bA$} & \multicolumn{2}{c}{$A$}
+  \\
+  && $\bB$ & \multicolumn{2}{|c|}{$B$} & $\bB$
+  \\ \midrule
+  \multirow{2}{*}{$\bC$} & $\bD$
+                                &\marktopleft{p1c1}1&\marktopleft{p1r1}1& 0 & 0
+  \\\cmidrule{2-2}
+  & \multirow{2}{*}{$D$}
+                                  &\marktopleft{p1o2} 1\markbottomright{p1o2}{orange}&1\markbottomright{p1c1}{cyan}&0&\marktopleft{p1br1} \marktopleft{p1o1}1\markbottomright{p1o1}{orange}
+  \\\cmidrule{1-1}
+  \multirow{2}{*}{$C$}   &
+                                  &0&\marktopleft{p1g1}1&\marktopleft{p1b1}1&1\markbottomright{p1b1}{blue} \markbottomright{p1br1}{brown}
+  \\\cmidrule{2-2}
+  & $\bD$
+                                  &0&1\markbottomright{p1r1}{red} & 1\markbottomright{p1g1}{green}& 0
+  \\\bottomrule
+\end{tabular}
+
+\[
+  f = \color{red} \bA B + \color{green} BC + \color{blue} ACD + \color{cyan}
+  \bA \bC + \color{brown} A\bB D + \color{orange} \bB \bC D
+\]
+
+\begin{prob}
+  Find the simplest realization of the function $f (x_1 , \dots, x_4 ) = \sum m(0, 3, 4, 7, 9, 10, 13, 14)$,
+  assuming that the logic gates have a maximum fan-in of two.
+\end{prob}
+
+\begin{prob}
+  Find the minimum-cost circuit for the function $f (x_1 , \dots, x_4 ) = \sum m(0, 4, 8, 13, 14, 15)$.
+  Assume that the input variables are available in uncomplemented form only. (Hint: Use
+  functional decomposition.)
+\end{prob}
+\begin{prob}
+  Use functional
+  decomposition to find the best implementation of the function $f (x_1 , \dots,
+  x_5 ) = \sum m(1, 2, 7, 9, 10, 18, 19, 25, 31) + D(0, 15, 20, 26)$. How does your implementa-
+  tion compare with the lowest-cost SOP implementation? Give the costs.
+\end{prob}
+
+
+%\bibliography{main}
+%\bibliographystyle{plain}
+\end{document}
