@@ -31,6 +31,9 @@
   \tikz[overlay,remember picture,inner sep=1pt]
   \node[draw={#2},rounded corners,fit=(marker-#1-a.north west) (marker-#1-b.south east)] {};%
 }
+\newcommand\drawrect[2]{%
+  \tikz{\node[draw={#1}, rounded corners]{#2};}%
+}
 
 \begin{document}
 
@@ -66,23 +69,209 @@ The K-map for $f$ is
   \bA \bC + \color{brown} A\bB D + \color{orange} \bB \bC D
 \]
 
+Cost($f$) = 6 AND gates + 2*3 + 3*3 inputs to AND gates + 1 OR gate + 6 inputs = 28.
+
 \begin{prob}
   Find the simplest realization of the function $f (x_1 , \dots, x_4 ) = \sum m(0, 3, 4, 7, 9, 10, 13, 14)$,
   assuming that the logic gates have a maximum fan-in of two.
 \end{prob}
+
+\subsubsection*{Solution}
+The K-map for $f$ is
+\\[1em]
+\begin{tabular}{cc|cccc|r}
+  \toprule
+  && \multicolumn{2}{c|}{$\bx_1$} & \multicolumn{2}{c|}{$x_1$} & Row pattern
+  \\
+  && $\bx_2$ & \multicolumn{2}{|c|}{$x_2$} & $\bx_2$
+  \\ \midrule
+  \multirow{2}{*}{$\bx_3$} & $\bx_4$
+                                  & 1 & 1 & 0 & 0 & $\bar{g} = \bx_1$
+  \\\cmidrule{2-2}
+  & \multirow{2}{*}{$x_4$}
+                                  & 0 & 0 & 1 & 1 & $g = x_1$
+  \\\cmidrule{1-1}
+  \multirow{2}{*}{$x_3$}   &
+                                  & 1 & 1 & 0 & 0 & $\bar{g}$
+  \\\cmidrule{2-2}
+  & $\bx_4$
+                                  & 0 & 0 & 1 & 1 & $g$
+  \\\midrule
+  \multicolumn{2}{l|}{Col pattern} & $\bar{h}$ & $\bar{h}$ &  $h$ & $h$ & 
+  \\\bottomrule
+\end{tabular}
+\\[1em]
+Writing $f$ in terms of column pattern $h=\bx_3 x_4 + x_3\bx_4 = x_3 \oplus x_4$.
+\begin{align}
+  f &= h x_1 + \bar{h} \bx_1
+  \\
+  &= \bx_1 \oplus h
+  \\
+  &= \bx_1 \oplus (x_3 \oplus x_4)
+\end{align}
+Cost($f$) = 2 XOR gates + (2+2) inputs each = 6.
+Max fan-in = 2.
+
+
+
 
 \begin{prob}
   Find the minimum-cost circuit for the function $f (x_1 , \dots, x_4 ) = \sum m(0, 4, 8, 13, 14, 15)$.
   Assume that the input variables are available in uncomplemented form only. (Hint: Use
   functional decomposition.)
 \end{prob}
+
+\subsubsection*{Solution}
+The K-map for $f$ is
+\\[1em]
+\begin{tabular}{cc|cccc|r}
+  \toprule
+  && \multicolumn{2}{c|}{$\bx_1$} & \multicolumn{2}{c|}{$x_1$} & Row pattern
+  \\
+  && $\bx_2$ & \multicolumn{2}{|c|}{$x_2$} & $\bx_2$
+  \\ \midrule
+  \multirow{2}{*}{$\bx_3$} & $\bx_4$
+                                  & 1 & 1 & 0 & 1 & $\bar{g} = x_1 x_2$
+  \\\cmidrule{2-2}
+  & \multirow{2}{*}{$x_4$}
+                                  & 0 & 0 & 1 & 0 & $g = x_1x_2$
+  \\\cmidrule{1-1}
+  \multirow{2}{*}{$x_3$}   &
+                                  & 0 & 0 & 1 & 0 & $g$
+  \\\cmidrule{2-2}
+  & $\bx_4$
+                                  & 0 & 0 & 1 & 0 & $g$
+  \\\midrule
+  \multicolumn{2}{l|}{Col pattern} & $h = \bx_3\bx_4$ & $h$ &  $\bar{h}$ & $h$ & 
+  \\\bottomrule
+\end{tabular}.
+\\[1em]
+
+Write $f$ in terms of $g$,
+\begin{align}
+  f &= \bx_3\bx_4 \bar{g} +  \overline{\bx_3\bx_4} g
+  \\
+  &= \overline{x_3 + x_4} \bar{g} + \underbrace{(x_3 + x_4)}_{h_2} g
+  \\
+  &= \bar{h}_2 \bar{g} + h_2 g
+    \\
+  &= \overline{h_2 \oplus g}
+    \\
+  &= \overline{(x_3 + x_4) \oplus (x_1 x_2)}
+\end{align}
+Cost($f$) = 1 OR gate + 2 inputs for OR gate + 1 AND gate + 2 inputs for AND
+gate + 1 XOR gate + 2 inputs for XOR gate + 1 NOT gate + 1 input to NOT gate = 11.
+
 \begin{prob}
   Use functional
   decomposition to find the best implementation of the function $f (x_1 , \dots,
-  x_5 ) = \sum m(1, 2, 7, 9, 10, 18, 19, 25, 31) + D(0, 15, 20, 26)$. How does your implementa-
-  tion compare with the lowest-cost SOP implementation? Give the costs.
+  x_5 ) = \sum m(1, 2, 7, 9, 10, 18, 19, 25, 31) + D(0, 15, 20, 26)$. How does your implementation compare with the lowest-cost SOP implementation? Give the costs.
+  \label{prob:4}
 \end{prob}
 
+\subsubsection*{Solution}
+The K-map for $f$ is given in Table~\ref{tab:prob4}.
+\begin{table*}
+\begin{tabular}{cc|cccc|r|cccc|r}
+  \toprule
+  && \multicolumn{4}{|c|}{$\bx_1$} & Row pattern & \multicolumn{4}{c|}{$x_1$} & Row pattern
+  \\
+  && \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c|}{$x_2$} & 
+                                                                              & \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c|}{$x_2$} & 
+  \\
+  && $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$ & & 
+                                             $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$ & 
+  \\ \midrule
+  \multirow{2}{*}{$\bx_4$} & $\bx_5$
+                                  & d & 0 & 0 & 0 & $\mathbf{0}$
+                                                               & 0 & d & 0 & 0 & $\mathbf{0}$
+  \\\cmidrule{2-2}
+  & \multirow{2}{*}{$x_5$}
+                                   & 1 & 0 & 0 & \tikz{\node[draw=green,rounded corners] {1}} & $\bar{g} = \bx_3$
+                                                               & 0 & 0 & 0 & \tikz{\node[draw=green,rounded corners] {1}} & $g_2 = x_2 \bx_3$
+  \\\cmidrule{1-1}
+  \multirow{2}{*}{$x_4$}   &
+                                  & 0 & 1 & \tikz{\node[draw=blue, rounded corners]{d}} & 0 & $g =  x_3$
+                                                               & \marktopleft{p4r1}1 & 0 & \tikz{\node[draw=blue, rounded corners]{1}} & 0 & $g_3 = \bx_2\oplus x_3 $
+  \\\cmidrule{2-2}
+  & $\bx_5$
+                                   & 1 & 0 & 0 & \tikz{\node[draw=green,rounded corners] {1}} & $\bar{g} = \bx_3$
+                                                               & 1 \markbottomright{p4r1}{red} & 0 & 0 & \tikz{\node[draw=green,rounded corners] {d}} & $g = \bx_3 $
+  \\\midrule
+  \multicolumn{2}{l|}{Col pattern} & $h = x_4 \oplus x_5 $ & $h_2 = x_4x_5$ &  $\mathbf{0}$ & $h$ & 
+                                  & $h_3 = x_4$ & $\mathbf{0}$ &  $h_2 = x_2 x_4$ & $h$ & 
+  \\\bottomrule
+\end{tabular}
+\caption{K-map for Problem~\ref{prob:4}.}
+\label{tab:prob4}
+\end{table*}
+
+We try writing $\bx_1 = 1$ half of $f$ in terms of Row patterns $g = x_3$, and $x_1 =
+1$ half of $f$ in terms normal K-map grouped terms,
+%
+\begin{align}
+  f &= \bx_1 ( \underbrace{(\bx_4 x_5 + x_4 \bx_5)}_{h} \bx_3 + \underbrace{x_4 x_5}_{h_2} x_3)
+      \notag\\&\qquad
+  + {\color{red} x_1 \bx_2\bx_3x_4} + {\color{blue} x_2x_3 h_2} + {\color{green} x_2\bx_3 h}
+  \notag\\
+    &=\bx_1 h \bx_3 + \bx_1 h_2 x_3 
+      + {\color{red} x_1 \bx_2\bx_3x_4} + {\color{blue} x_2x_3 h_2} 
+  \notag\\&\qquad
+  + {\color{green} x_2\bx_3 h}
+  \notag
+\end{align}
+%
+Cost($h$) = 1+2=3. Cost($h_2$) = 1+2=3. Total Cost of $f$ = Cost($h$) +
+Cost($h_2$) + 5 AND gates + 4*3 input per gate +4 inputs to AND gates + 1 OR
+gate + 5 inputs = 3+3+5 + 12+4+1+5=33.
+
+Normal grouping is shown in Table~\ref{tab:prob4.2}.
+
+\begin{table*}
+  \centering
+\begin{tabular}{cc|cccc|cccc}
+  \toprule
+  && \multicolumn{4}{|c|}{$\bx_1$} &  \multicolumn{4}{c|}{$x_1$} 
+  \\
+  && \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c|}{$x_2$} & 
+                                                                              \multicolumn{2}{c|}{$\bx_2$} & \multicolumn{2}{c|}{$x_2$} 
+  \\
+  && $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$ & 
+                                             $\bx_3$ & \multicolumn{2}{|c|}{$x_3$} & $\bx_3$ 
+  \\ \midrule
+  \multirow{2}{*}{$\bx_4$} & $\bx_5$
+                                   & d & 0 & 0 & 0
+                                                                                                           & 0 & d & 0 & 0 
+  \\\cmidrule{2-2}
+  & \multirow{2}{*}{$x_5$}
+                                   & \drawrect{cyan}{1} & 0 & 0 & \drawrect{cyan}{\drawrect{green}{1}}
+                                                               & 0 & 0 & 0 & \tikz{\node[draw=green,rounded corners] {1}}
+  \\\cmidrule{1-1}
+  \multirow{2}{*}{$x_4$}   &
+                                  & 0 & \marktopleft{p4o1}1 & \drawrect{blue}{d}\markbottomright{p4o1}{orange} & 0
+                                                               & \marktopleft{p4r1}1 & 0 & \tikz{\node[draw=blue, rounded corners]{1}} & 0 
+  \\\cmidrule{2-2}
+  & $\bx_5$
+                                   & \drawrect{brown}{1} & 0 & 0 & \drawrect{brown}{1} 
+                                                               & 1 \markbottomright{p4r1}{red} & 0 & 0 & d
+  \\\bottomrule
+\end{tabular}
+\caption{K-map for Problem~\ref{prob:4}.}
+\label{tab:prob4.2}
+\end{table*}
+
+
+% 
+\begin{align}
+  f &= {\color{brown} x_1 \bx_3 x_4\bx_5} + {\color{cyan} x_1 \bx_3 \bx_4 \bx_5}
+      + {\color{orange} x_1 x_3 x_4 x_5 }
+  \notag\\&\qquad
+      + {\color{red} x_1 \bx_2\bx_3x_4}
+      + {\color{blue} x_2x_3 x_4x_5}
+      + {\color{green} x_2\bx_3 \bx_4 x_5}
+\end{align}
+% 
+Cost($f$) = 6+6*4+1+6=37.
 
 %\bibliography{main}
 %\bibliographystyle{plain}
