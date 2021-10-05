@@ -253,7 +253,7 @@ Normal grouping is shown in Table~\ref{tab:prob4.2}.
   \\\cmidrule{2-2}
   & $\bx_5$
                                    & \drawrect{brown}{1} & 0 & 0 & \drawrect{brown}{1} 
-                                                               & 1 \markbottomright{p4r1}{red} & 0 & 0 & d
+                                                               & \drawrect{brown}{1\markbottomright{p4r1}{red}} & 0 & 0 & \drawrect{brown}{d}
   \\\bottomrule
 \end{tabular}
 \caption{K-map for Problem~\ref{prob:4}.}
@@ -263,7 +263,7 @@ Normal grouping is shown in Table~\ref{tab:prob4.2}.
 
 % 
 \begin{align}
-  f &= {\color{brown} x_1 \bx_3 x_4\bx_5} + {\color{cyan} x_1 \bx_3 \bx_4 \bx_5}
+  f &= {\color{brown} \bx_3 x_4\bx_5} + {\color{cyan} x_1 \bx_3 \bx_4 \bx_5}
       + {\color{orange} x_1 x_3 x_4 x_5 }
   \notag\\&\qquad
       + {\color{red} x_1 \bx_2\bx_3x_4}
@@ -271,7 +271,8 @@ Normal grouping is shown in Table~\ref{tab:prob4.2}.
       + {\color{green} x_2\bx_3 \bx_4 x_5}
 \end{align}
 % 
-Cost($f$) = 6+6*4+1+6=37.
+Cost($f$) = 6 AND gates +(3+5*4 inputs to AND gates)+1 OR gate+6 inputs to the
+OR gate=36.
 
 %\bibliography{main}
 %\bibliographystyle{plain}
