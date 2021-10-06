@@ -162,15 +162,6 @@ Write $f$ in terms of $g$,
 Cost($f$) = 1 OR gate + 2 inputs for OR gate + 1 AND gate + 2 inputs for AND
 gate + 1 XOR gate + 2 inputs for XOR gate + 1 NOT gate + 1 input to NOT gate = 11.
 
-\begin{prob}
-  Use functional
-  decomposition to find the best implementation of the function $f (x_1 , \dots,
-  x_5 ) = \sum m(1, 2, 7, 9, 10, 18, 19, 25, 31) + D(0, 15, 20, 26)$. How does your implementation compare with the lowest-cost SOP implementation? Give the costs.
-  \label{prob:4}
-\end{prob}
-
-\subsubsection*{Solution}
-The K-map for $f$ is given in Table~\ref{tab:prob4}.
 \begin{table*}
 \begin{tabular}{cc|cccc|r|cccc|r}
   \toprule
@@ -206,26 +197,6 @@ The K-map for $f$ is given in Table~\ref{tab:prob4}.
 \label{tab:prob4}
 \end{table*}
 
-We try writing $\bx_1 = 1$ half of $f$ in terms of Row patterns $g = x_3$, and $x_1 =
-1$ half of $f$ in terms normal K-map grouped terms,
-%
-\begin{align}
-  f &= \bx_1 ( \underbrace{(\bx_4 x_5 + x_4 \bx_5)}_{h} \bx_3 + \underbrace{x_4 x_5}_{h_2} x_3)
-      \notag\\&\qquad
-  + {\color{red} x_1 \bx_2\bx_3x_4} + {\color{blue} x_2x_3 h_2} + {\color{green} x_2\bx_3 h}
-  \notag\\
-    &=\bx_1 h \bx_3 + \bx_1 h_2 x_3 
-      + {\color{red} x_1 \bx_2\bx_3x_4} + {\color{blue} x_2x_3 h_2} 
-  \notag\\&\qquad
-  + {\color{green} x_2\bx_3 h}
-  \notag
-\end{align}
-%
-Cost($h$) = 1+2=3. Cost($h_2$) = 1+2=3. Total Cost of $f$ = Cost($h$) +
-Cost($h_2$) + 5 AND gates + 4*3 input per gate +4 inputs to AND gates + 1 OR
-gate + 5 inputs = 3+3+5 + 12+4+1+5=33.
-
-Normal grouping is shown in Table~\ref{tab:prob4.2}.
 
 \begin{table*}
   \centering
@@ -260,11 +231,42 @@ Normal grouping is shown in Table~\ref{tab:prob4.2}.
 \label{tab:prob4.2}
 \end{table*}
 
+\begin{prob}
+  Use functional
+  decomposition to find the best implementation of the function $f (x_1 , \dots,
+  x_5 ) = \sum m(1, 2, 7, 9, 10, 18, 19, 25, 31) + D(0, 15, 20, 26)$. How does your implementation compare with the lowest-cost SOP implementation? Give the costs.
+  \label{prob:4}
+\end{prob}
+
+\subsubsection*{Solution}
+The K-map for $f$ is given in Table~\ref{tab:prob4}.
+
+We try writing $\bx_1 = 1$ half of $f$ in terms of Row patterns $g = x_3$, and $x_1 =
+1$ half of $f$ in terms normal K-map grouped terms,
+%
+\begin{align}
+  f &= \bx_1 ( \underbrace{(\bx_4 x_5 + x_4 \bx_5)}_{h} \bx_3 + \underbrace{x_4 x_5}_{h_2} x_3)
+      \notag\\&\qquad
+  + {\color{red} x_1 \bx_2\bx_3x_4} + {\color{blue} x_2x_3 h_2} + {\color{green} x_2\bx_3 h}
+  \notag\\
+    &=\bx_1 h \bx_3 + \bx_1 h_2 x_3 
+      + {\color{red} x_1 \bx_2\bx_3x_4} + {\color{blue} x_2x_3 h_2} 
+  \notag\\&\qquad
+  + {\color{green} x_2\bx_3 h}
+  \notag
+\end{align}
+%
+Cost($h = x_4 \oplus x_5 $) = 1+2=3. Cost($h_2$) = 1+2=3. Total Cost of $f$ = Cost($h$) +
+Cost($h_2$) + 5 AND gates + 4*3 input per gate +4 inputs to AND gates + 1 OR
+gate + 5 inputs = 3+3+5 + 12+4+1+5=33.
+
+Normal grouping is shown in Table~\ref{tab:prob4.2}.
+
 
 % 
 \begin{align}
-  f &= {\color{brown} \bx_3 x_4\bx_5} + {\color{cyan} x_1 \bx_3 \bx_4 \bx_5}
-      + {\color{orange} x_1 x_3 x_4 x_5 }
+  f &= {\color{brown} \bx_3 x_4\bx_5} + {\color{cyan} \bx_1 \bx_3 \bx_4 \bx_5}
+      + {\color{orange} \bx_1 x_3 x_4 x_5 }
   \notag\\&\qquad
       + {\color{red} x_1 \bx_2\bx_3x_4}
       + {\color{blue} x_2x_3 x_4x_5}
