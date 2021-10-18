@@ -11,7 +11,11 @@ layout: page
 # Lab supporting documents
 
 - Pin Assignments : [DE0_TOP.qsf](/lab_pdfs/DE0_TOP.qsf)
+- DE0
 
 # Prelabs
 
 - Prelab for Lab 5 : [Lab 5 Prelab](/lab_pdfs/ECE275_Lab5_Prelab.pdf)
+
+#Additional Resources
+Intel/Altera Document on Synthesis of Math Functions : [Advanced Synthesis Cookbook](https://intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/stx_cookbook.pdf)
