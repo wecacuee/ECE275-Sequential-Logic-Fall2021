@@ -1,0 +1,82 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\input{sym}
+\title{Homework 6}
+\author{Max marks: 50 marks}
+\date{Due on Oct 25th, 2021, 9 AM, before class.}
+\newtheorem{prob}{Problem}
+
+\newcommand{\bx}{\bar{x}}
+\newcommand{\by}{\bar{y}}
+\newcommand{\bz}{\bar{z}}
+\newcommand{\bA}{\bar{A}}
+\newcommand{\bB}{\bar{B}}
+\newcommand{\bC}{\bar{C}}
+\begin{document}
+
+\maketitle
+\begin{prob}
+  Show how the function $f (w_1 , w_2 , w_3 ) = \sum m(0, 2, 3, 4, 5, 7)$ can be implemented using a
+  3-to-8 binary decoder and an OR gate.~\cite[Prob 4.1]{brown2013fundamentals}
+  (10 marks)
+\end{prob}
+
+\begin{prob}
+  Consider the function $f = w_2 w_3 + w_1 w_2$. table to derive a circuit for
+  $f$ that uses a 2-to-1 multiplexer.~\cite[Prob 4.4]{brown2013fundamentals}(10 marks)
+\end{prob}
+
+\begin{prob}
+  Figure~\ref{fig:seven-seg-display} shows the notation for a BCD to 7-segment
+display and Table~\ref{tab:seven-segment-tt} shows the corresponding truth
+table. The inputs corresponding to the missing rows in the truth table should be
+considered as don't care.
+  \begin{enumerate}
+   \item implement segment ``a'' using an 8:1 mux and no other logic gate, (10 marks)
+   \item implement segment ``a'' using a 4:1 mux and one other gate, (10 marks)
+   \item implement segment ``f'' with 4:1 mux and no other logic gate. (10 marks)
+  \end{enumerate}
+\end{prob}
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth,trim=0 10cm 0 0.2cm,clip]{fig-4.21.png}
+  \\
+  \caption{Seven segment display and BCD-to-7-segment display converter. When
+    $a=1$ the corresponding segment of the display lights up. To display the
+    number 8, you will turn on all the seven segments, while to display 1, you
+    will turn on $b=1, c=1$ and turn off $=0$ the rest. The full truth-table for
+  the seven-segment display is shown in Table~\ref{tab:seven-segment-tt}.}
+  \label{fig:seven-seg-display}
+\end{figure}
+
+\begin{table}
+  \footnotesize
+\begin{tabular}{l|cccc||ccccccc}
+  \toprule
+  Row & w_3 & w_2 & w_1 & w_0 & a & b & c & d & e & f & g \\
+  \midrule
+  0  & 0    & 0   &   0 &   0 & 1 & 1 & 1 & 1 & 1 & 1 & 0 \\
+  1  & 0    & 0   &   0 &   1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
+  2  & 0    & 0   &   1 &   0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 \\ 
+  3  & 0    & 0   &   1 &   1 & 1 & 1 & 1 & 1 & 0 & 0 & 1 \\ 
+  4  & 0    & 1   &   0 &   0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 
+  5  & 0    & 1   &   0 &   1 & 1 & 0 & 1 & 1 & 0 & 1 & 1 \\   
+  6  & 0    & 1   &   1 &   0 & 1 & 0 & 1 & 1 & 1 & 1 & 1 \\ 
+  7  & 0    & 1   &   1 &   1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \\ 
+  8  & 1    & 0   &   0 &   0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+  9  & 1    & 0   &   0 &   1 & 1 & 1 & 1 & 1 & 0 & 1 & 1 \\
+  \bottomrule
+\end{tabular}
+\caption{Truth table for BCD to seven-segment display as shown in
+  Figure~\ref{fig:seven-seg-display}. The missing combinations of inputs should
+  be considered as dont care.}
+\label{tab:seven-segment-tt}
+\end{table}
+
+\bibliography{main}
+\bibliographystyle{plain}
+\end{document}
