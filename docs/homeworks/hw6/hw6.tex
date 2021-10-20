@@ -46,11 +46,14 @@ considered as don't care.
      ($w_1,w_0$), ($w_0, w_3$), ($w_0, w_2$), ($w_1, w_3$). There are 6 don't
      care conditions. With two control inputs of the multiplexer and one input
      allowed, you can represent an expression with upto 4-SOP-terms of size
-     three-literals or less.) (10 marks)
+     three-literals or less. You might the arrive at the answer sooner, if you
+     try to write the minimal SOP expression first and find the two inputs that
+     occur most often in all the terms. Those two inputs are most likely to the
+     control inputs.) (10 marks)
   \end{enumerate}
 \end{prob}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \includegraphics[width=\linewidth,trim=0 10cm 0 0.2cm,clip]{fig-4.21.png}
   \\
   \caption{Seven segment display and BCD-to-7-segment display converter. When
@@ -61,7 +64,7 @@ considered as don't care.
   \label{fig:seven-seg-display}
 \end{figure}
 
-\begin{table}
+\begin{table}[h!]
   \footnotesize
 \begin{tabular}{l|cccc||ccccccc}
   \toprule
