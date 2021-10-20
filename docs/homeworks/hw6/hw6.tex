@@ -10,6 +10,7 @@
 \date{Due on Oct 25th, 2021, 9 AM, before class.}
 \newtheorem{prob}{Problem}
 
+\newcommand{\bw}{\bar{w}}
 \newcommand{\bx}{\bar{x}}
 \newcommand{\by}{\bar{y}}
 \newcommand{\bz}{\bar{z}}
@@ -26,8 +27,9 @@
 \end{prob}
 
 \begin{prob}
-  Consider the function $f = w_2 w_3 + w_1 w_2$.  Derive a circuit for
-  $f$ that uses a 2-to-1 multiplexer.~\cite[Prob 4.4]{brown2013fundamentals}(10 marks)
+  Consider the function $f = \bw_2 \bw_3 + w_1 w_2$.  Derive a circuit for
+  $f$ that uses only one 2-to-1 multiplexer and no other gates (assuming inputs
+  are available in both uncomplemented and complemented form).~\cite[Prob 4.4]{brown2013fundamentals}(10 marks)
 \end{prob}
 
 \begin{prob}
@@ -38,7 +40,13 @@ considered as don't care.
   \begin{enumerate}
    \item implement segment ``a'' using an 8:1 mux and no other logic gate, (10 marks)
    \item implement segment ``a'' using a 4:1 mux and one other gate, (10 marks)
-   \item implement segment ``f'' with 4:1 mux and no other logic gate. (10 marks)
+   \item implement segment ``f'' with 4:1 mux and no other logic gate. Assume
+     inputs are available in both uncomplemented and complemented form. (Hint:
+     There are (${}^4C_2 = 6$) possible pairs of control inputs: ($w_3, w_2$), ($w_2, w_1$),
+     ($w_1,w_0$), ($w_0, w_3$), ($w_0, w_2$), ($w_1, w_3$). There are 6 don't
+     care conditions. With two control inputs of the multiplexer and one input
+     allowed, you can represent an expression with upto 4-SOP-terms of size
+     three-literals or less.) (10 marks)
   \end{enumerate}
 \end{prob}
 
