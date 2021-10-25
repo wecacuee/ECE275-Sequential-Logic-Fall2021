@@ -8,6 +8,7 @@ layout: page
 - Sep 20, 2021 : [Verilog Modules](/lab_pdfs/ECE275_Lab3_Verilog_Modules.pdf)
 - Sep 27, 2021 : [Ripple Adder](/lab_pdfs/ECE275_Lab4.pdf)
 - Oct 18, 2021 : [Logic Synthesis and Always Blocks](/lab_pdfs/ECE275_Lab5.pdf)
+- Oct 25, 2021 : [Procedural Verilog and Binary to BCD](/lab_pdfs/ECE275_Lab6.pdf)
 
 # Lab supporting documents
 
