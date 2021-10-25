@@ -1,0 +1,90 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\input{sym}
+\title{Homework 7}
+\author{Max marks: }
+\date{Due on Nov 1st, 2021, 9 AM, before class.}
+\newtheorem{prob}{Problem}
+
+\newcommand{\bw}{\bar{w}}
+\newcommand{\bx}{\bar{x}}
+\newcommand{\by}{\bar{y}}
+\newcommand{\bz}{\bar{z}}
+\newcommand{\bA}{\bar{A}}
+\newcommand{\bB}{\bar{B}}
+\newcommand{\bC}{\bar{C}}
+\begin{document}
+
+\maketitle
+\begin{prob}
+  Consider the timing diagram in Figure~\ref{fig:p51}. Assuming that the D and Clock inputs shown
+  are applied to the circuit in Figure~\ref{fig:5.10}, draw waveforms for the
+  $Q_a$ , $Q_b$ , and $Q_c$ signals. (10 marks)~\cite[Prob 5.1]{brown2013fundamentals}
+  \label{prob:1}
+\end{prob}
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{fig-p5.1.png}
+  \caption{Inputs for Prob~\ref{prob:1}}
+  \label{fig:p51}
+\end{figure}
+\begin{figure}[ht!]
+  \includegraphics[width=0.7\linewidth]{fig-5.10.png}
+  \caption{Circuit for Prob~\ref{prob:1}.
+    Recall that $Clk$ with a ``$\triangleright$'' symbol
+    indicates rising-edge (positive-edge) triggered flip-flop. $Clk$ without
+    ``$\triangleright$'' symbol indicates a level-triggered latch.
+    $Clk$ with ``$\circ\triangleright$'' symbol
+    indicates a falling-edge (negative-edge) triggered flip-flop. 
+  }
+  \label{fig:5.10}
+\end{figure}
+
+\begin{prob}
+  Figure~\ref{fig:5.4} shows a S-R latch built with NOR gates. Draw a similar
+latch using NAND gates. Derive its characteristic table and show its timing
+diagram. Assume that $\bar{S}$ and $\bar{R}$ are available.
+\label{prob:2} (10 marks)~\cite[Prob 5.2]{brown2013fundamentals}.
+\end{prob}
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{fig-5.4.png}
+  \caption{Circuit for Prob~\ref{prob:2}}
+  \label{fig:5.4}
+\end{figure}
+
+\begin{prob}
+  An SR flip-flop is a flip-flop that has set and reset inputs like a gated SR
+latch. Show how an SR flip-flop can be constructed using a D flip-flop and other
+logic gates. (10 marks)~\cite[Prob 5.5]{brown2013fundamentals}
+\end{prob}
+
+\begin{prob}
+  Show how a JK flip-flop can be constructed using a T flip-flop and other logic
+  gates (10 marks)~\cite[Prob 5.7]{brown2013fundamentals}.
+\end{prob}
+
+\begin{prob}
+  Design a three-bit up/down counter using T flip-flops. It should include a control input
+  called Up/Down. If Up/Down = 0, then the circuit should behave as an up-counter. If
+  Up/Down = 1, then the circuit should behave as a down-counter. You can use a
+  2-1 MUX for the switching or you can uses basic logic gates (10
+  marks)~\cite[Prob 5.15]{brown2013fundamentals}.
+\end{prob}
+
+\begin{prob}
+  The circuit in Figure~\ref{fig:p5.3} looks like a counter. What is the
+  counting sequence of this circuit (10 marks)~\cite[Prob 5.17]{brown2013fundamentals}?
+  \label{prob:6}
+\end{prob}
+\begin{figure}[ht!]
+  \includegraphics[width=\linewidth]{fig-p5.3.png}
+  \caption{Circuit for Problem~\ref{prob:6}.}
+    \label{fig:p5.3}
+\end{figure}
+
+\bibliography{main}
+\bibliographystyle{plain}
+\end{document}
