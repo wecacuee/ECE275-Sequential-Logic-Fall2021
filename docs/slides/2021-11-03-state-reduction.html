@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Synchronous Sequential Circuits</title>
+	<title>State reduction</title>
 
 	<meta name="description" content="">
 	<meta name="author" content="Vikas Dhiman">
@@ -178,7 +178,7 @@
     \newcommand{\bE}{\bar{E}}
     \]
 </div>
-<h2>ECE 275: Synchronous Sequential circuits</h2>
+<h2>ECE 275: State reduction</h2>
 	<p>
 		<a href="https://vikasdhiman.info/ECE275-Sequential-Logic/">Website: https://vikasdhiman.info/ECE275-Sequential-Logic/</a>
 	</p>
@@ -241,8 +241,20 @@
 </section>
 
 <section>
-    <h2>State reduction</h2>
-    <img src="./2021-11-03-state-reduction_files/fig-15.1.png" width="400px" />
+    <h2>State reduction: Ex1</h2>
+    A sequential circuit has one input (X) and one output (Z). The circuit examines groups
+    of four consecutive inputs and produces an output \( Z = 1 \) if the input sequence 0101 or
+    1001 occurs. The circuit resets after every four inputs. Find the Mealy state graph.
+</section>
+
+
+<section>
+    <h2>State reduction: Ex1</h2>
+    <div class="image-table" >
+    <img src="./2021-11-03-state-reduction_files/fig-15.1.png" width="500px" />
+    </div>
+    <div classs="image-table" >
+    </div>
 </section>
 
 <section>
@@ -269,7 +281,7 @@
 </section>
 
 <section>
-    <h2>Implication tables</h2>
+    <h2>Implication tables: Ex2</h2>
     <img src="./2021-11-03-state-reduction_files/fig-15.3.png" width="400px" />
 </section>
 
@@ -319,7 +331,7 @@
 				// },
                 chalkboard: {
                     theme: 'whiteboard',
-                    src: '2021-11-01-seq-circuits-ex2_files/chalkboard.json'
+                    src: '2021-11-03-state-reduction_files/chalkboard.json'
                 },
 				plugins: [ RevealMarkdown, RevealHighlight,
                            RevealMath, // RevealAudioSlideshow, RevealAudioRecorder,
