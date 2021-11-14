@@ -10,6 +10,7 @@ layout: page
 - Oct 18, 2021 : [Logic Synthesis and Always Blocks]({{site.baseurl}}/lab_pdfs/ECE275_Lab5.pdf)
 - Oct 25, 2021 : [Procedural Verilog and Binary to BCD]({{site.baseurl}}/lab_pdfs/ECE275_Lab6.pdf)
 - Nov 1, 2021  : [Verilog Code Quality]({{site.baseurl}}/lab_pdfs/ECE275_Lab7.pdf)
+- Nov 15, 2021 : [HDL Simulation]({{site.baseurl}}/lab_pdfs/ECE275_Lab8.pdf)
 
 # Lab supporting documents
 
