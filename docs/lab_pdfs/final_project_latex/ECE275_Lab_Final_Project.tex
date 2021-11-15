@@ -1,0 +1,63 @@
+\documentclass{article}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+
+\usepackage{float}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[shortlabels]{enumitem}
+
+ 
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\definecolor[named]{myLayoutColorAux}{RGB}{174,49,54}
+\definecolor[named]{myLayoutColorMain}{RGB}{0,26,153}
+\definecolor[named]{myLayoutColorRed}{RGB}{255,0,0}
+\usepackage{color}
+\usepackage{menukeys}
+
+\renewcommand{\cfttoctitlefont}{\color{myLayoutColorMain} \bfseries\Large}
+\renewcommand{\cftloftitlefont}{\color{myLayoutColorMain} \bfseries\Large}
+ 
+\begin{document}
+\setcounter{section}{-1}
+\title{ECE275 Lab Final Project}
+\author{Pascal Francis-Mezger\\
+}
+ 
+\maketitle
+
+
+\color{myLayoutColorAux}
+
+\color{myLayoutColorMain}
+\section*{Final Project Overview}
+\color{black}
+The final project consists of a design, implementation, and documentation for an advanced FPGA project. You should use both what you have learned in class, and additional functionality you can find in reference material, manuals, and documentation.
+
+\color{myLayoutColorMain}
+\section*{Final Project Requirements}
+\color{black}
+\begin{enumerate}
+    \item Must consist of substantially your own created work. Utilizing supporting code to realize your design is acceptable, but it must be \underline{clearly demarcated} what is your code and what is supporting code you have integrated.
+    \item Must integrate some functionality into your project that we have not explicitly covered in class. This could be more advanced Verilog functionality, integrating VHDL modules, utilizing some hardware on the FPGA we have not yet utilized, integrating external hardware/sensors, etc.
+    \item Must provide a clear design goal before implementation. It is expected your design will change as you work through implementation, but you need clearly defined goals before starting. This should consist of a block/wiring/hardware diagram, and a short writeup describing the functionality. In your final writeup you should describe and differences between your initial goals and your finished project, and what led you to make those changes.
+    \item Must provide documenation of the finished project. This should consist of your your initial design documents, a detailed description of the functionality of your final project, a listing of all of your code, a description of your code, and a brief conclusion covering any changes to the final project from your initial design and any future modifications you would like to make to the project. The description for the code at minimum should describe the functionality of each module, the purpose of the input/outputs for the modules, and broad strokes of how your code in the modules accomplishes your functionality. 
+\end{enumerate}
+\color{myLayoutColorMain}
+\section*{Final Project Suggestions}
+\color{black}
+It is highly recommended that you do some research and select a topic you are interested in for the final project. If you are struggling or need some ideas to get started, the options below would make reasonable final projects.
+\begin{enumerate}
+    \item Utilize the supporting code for displaying on a VGA monitor from the FGPA to create a unique functionality, such as a small user interactive game, visual effects, or content display
+    \item Implement a communication protocol to read information from an outside source such as a sensor with SPI/I2C or computer with RS232. If you develop the communications in its entirety yourself, that may be sufficient for a final project. If you are implementing a design for communications found elsewhere, you would also need to do significant data processing of the incoming/outgoing information.
+    \item Create a user interactable calculator that keeps track of the current result on the seven segment displays. Would allow the user to select a first and second operand, and an operation. The math opeartions are relatively easy to implement, so the real complexity for the project would be designing a user interface creatively with the inputs on the FPGA to allow for an interactive experience.
+    \item Do a research project on more advanced functionality of the FPGA/HDL/Quartus. For example, you could examine advanced simulation techniques, or compare implementations of designs in Verilog and VHDL and show the drawbacks and benefits of the different HDLs. If you go this route you should have quantifiable metrics and significant testing to make a reasonable short research paper. For reference, here is an example simple research paper comparing VHDL and Verilog: \url{https://www.researchgate.net/publication/282789906}
+\end{enumerate}
+\end{document}
