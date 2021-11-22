@@ -24,3 +24,11 @@ layout: page
 # Additional Resources
 
 - Intel/Altera Document on Synthesis of Math Functions : [Advanced Synthesis Cookbook](https://intel.com/content/dam/www/programmable/us/en/pdfs/literature/manual/stx_cookbook.pdf)
+
+# VGA Driver Files
+
+- Example simple top level : [VGA_top.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/VGA_top.v)
+- DE0 VGA Driver Module : [DE0_VGA.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/DE0_VGA.v)
+- PLL (Phase Locked Loop) Verilog File : [PLL_PIXEL_CLK.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/PLL_PIXEL_CLK.v)
+- QSF File : [VGA_top.qsf]({{site.baseurl}}/lab_pdfs/final_project_vga_files/VGA_top.qsf)
+
