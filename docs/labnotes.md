@@ -27,7 +27,7 @@ layout: page
 
 # VGA Driver Files
 
-- VGA Video Tutorial (Must be logged in to you Umaine account to view) : [Video Tutorial] (https://drive.google.com/file/d/1KwSqLo8CvzKBAjxMmDpdbc_UMAonZH9S/view?usp=sharing)
+- VGA Video Tutorial (Must be logged in to you Umaine account to view) : [Video Tutorial](https://drive.google.com/file/d/1KwSqLo8CvzKBAjxMmDpdbc_UMAonZH9S/view?usp=sharing)
 - Example simple top level : [VGA_top.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/VGA_top.v)
 - DE0 VGA Driver Module : [DE0_VGA.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/DE0_VGA.v)
 - PLL (Phase Locked Loop) Verilog File : [PLL_PIXEL_CLK.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/PLL_PIXEL_CLK.v)
