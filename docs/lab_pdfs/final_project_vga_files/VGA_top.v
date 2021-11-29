@@ -1,6 +1,6 @@
 `include "./DE0_VGA.v"
 
-module VGA_top(CLK_50, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS);
+module VGA_demo(CLK_50, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS);
 
 input	wire			CLK_50;
 

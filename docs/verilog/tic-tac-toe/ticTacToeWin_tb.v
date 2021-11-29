@@ -1,4 +1,4 @@
-`timescale 1ns/1ns
+`timescale 1ns/100ps
 module ticTacToeWin_tb();
 
 reg [8:0] grid_state_marked;
@@ -25,7 +25,7 @@ initial begin
 	grid_state_x = 9'b111_000_000;
 	#20 begin
 		grid_state_marked = 9'b111_100_100;
-		grid_state_x = 9'b011_010_000;
+		grid_state_x = 9'b011_000_000;
 	end
 	#40 begin
 		grid_state_marked = 9'b111_110_101;

@@ -4,7 +4,7 @@
 // clk: take input at the rising edge of the clock
 // next_player_input_cell: For every move next_player_input_cell provides a number between 1'h0 1'h9 
 // 						   indicating the cell to be updated be marked.
-// Game state consists of 3 parts: 
+// Game state consists of 4parts: 
 //  (1) grid_state_x: which cells of grid which are X's and which O's. 
 //  (2) grid_state_fill: which cells of grid are marked, which are empty. 
 //  (3) player_x_turn: Whether it is player X's turn or player O's turn.
@@ -45,9 +45,9 @@ end
 
 
 ticTacToeWin win(.grid_state_marked(next_grid_state_marked), 
-						.grid_state_x(next_grid_state_x), 
-						.someone_won(next_someone_won),
-						.player_x_won(next_player_x_won));
+				.grid_state_x(next_grid_state_x), 
+				.someone_won(next_someone_won),
+				.player_x_won(next_player_x_won));
 
 
 

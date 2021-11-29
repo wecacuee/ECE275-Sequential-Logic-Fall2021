@@ -22,7 +22,7 @@ reg [7:0] o; // 8 registers for possible win combos: 3 rows + 3 cols + 2 diags
 
 always @(grid_state_marked, grid_state_x) begin
 	someone_won = 0;
-	player_x_won = 0;
+	player_x_won = 1'bx;
 	x = 8'b1111_1111;
 	o = 8'b1111_1111;
 
