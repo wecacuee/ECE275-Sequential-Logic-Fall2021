@@ -66,17 +66,15 @@ always @(posedge clk) begin
 	// Tried this: next_player_input_cell = input_seq[4*input_seq_cursor:4*input_seq_cursor-4];
 	// Got this error: "Range must be bounded by constant expressions."
 	// Fixed by this: https://stackoverflow.com/questions/25123924/verilog-range-must-be-bounded-by-constant-expression
-	input_seq_cursor = (input_seq_cursor <= 4) ? 27 : input_seq_cursor - 4;
+	input_seq_cursor = (input_seq_cursor <= 4) ? input_seq_cursor : input_seq_cursor - 4;
 	next_player_input_cell = input_seq[input_seq_cursor -:4];
 	if (errno) begin
 		$display("error");
-		resetn = 0;
-		#1 resetn = 1;
+		$finish;
 	end
 	if (someone_won) begin
 		$display("%s won", player_x_won ? "x" : "o");
-		resetn = 0;
-		#1 resetn = 1;
+		$finish;
 	end
 end
 
