@@ -22,60 +22,64 @@ wire errno;
 wire [9*8:1] ttt_grid;
 
 ticTacToeCore ttt(
-	.clk(clk),
-	.resetn(resetn),
-	.next_player_input_cell(next_player_input_cell),
-	.grid_state_marked(grid_state_marked),
-	.grid_state_x(grid_state_x), 
-	.player_x_turn(player_x_turn), 
-	.someone_won(someone_won),
-	.player_x_won(player_x_won),
-	.errno(errno));
+    .clk(clk),
+    .resetn(resetn),
+    .next_player_input_cell(next_player_input_cell),
+    .grid_state_marked(grid_state_marked),
+    .grid_state_x(grid_state_x), 
+    .player_x_turn(player_x_turn), 
+    .someone_won(someone_won),
+    .player_x_won(player_x_won),
+    .errno(errno));
 
 ticTacToeToStr tostr(
-	.grid_state_marked(grid_state_marked),
-	.grid_state_x(grid_state_x),
-	.ttt_grid(ttt_grid));
+    .grid_state_marked(grid_state_marked),
+    .grid_state_x(grid_state_x),
+    .ttt_grid(ttt_grid));
 
 initial begin
 
-	clk = 0;
-	resetn = 0;
-	#1 resetn = 1;
-	
-	$monitor("time:%3d\n resetn: %b\n move:%04b\n%s\n%s\n%s\n sw: %b, xw: %b", 
-		$time,
-		resetn,
-		next_player_input_cell,
-		ttt_grid[9*8 -: 3*8],
-		ttt_grid[6*8 -: 3*8],
-		ttt_grid[3*8 -: 3*8],
-		someone_won, player_x_won);
+    clk = 0;
+    resetn = 0;
+    #5 resetn = 1;
+    
+    $monitor("time:%3d\n resetn: %b\n move:%04b\n%s\n%s\n%s\n sw: %b, xw: %b", 
+        $time,
+        resetn,
+        next_player_input_cell,
+        ttt_grid[9*8 -: 3*8],
+        ttt_grid[6*8 -: 3*8],
+        ttt_grid[3*8 -: 3*8],
+        someone_won, player_x_won);
 end
 
 always #5 clk = ~clk;
 
-always @(posedge resetn) begin
-	// Sequence of moves
-	input_seq = 28'b1000_0100_0000_0010_0110_0011_0111;
-	input_seq_cursor = 27;
-	next_player_input_cell = input_seq[input_seq_cursor -:4];
+always @(negedge resetn) begin
+    if (!resetn) begin
+        // Sequence of moves
+        input_seq = 28'b1000_0100_0000_0010_0110_0011_0111;
+        input_seq_cursor = 27;
+        next_player_input_cell = input_seq[input_seq_cursor -:4];
+    end
 end
 
 always @(posedge clk) begin
-	// Tried this: next_player_input_cell = input_seq[4*input_seq_cursor:4*input_seq_cursor-4];
-	// Got this error: "Range must be bounded by constant expressions."
-	// Fixed by this: https://stackoverflow.com/questions/25123924/verilog-range-must-be-bounded-by-constant-expression
-	input_seq_cursor = (input_seq_cursor <= 4) ? input_seq_cursor : input_seq_cursor - 4;
-	next_player_input_cell = input_seq[input_seq_cursor -:4];
-	if (errno) begin
-		$display("error");
-		$finish;
-	end
-	if (someone_won) begin
-		$display("%s won", player_x_won ? "x" : "o");
-		$finish;
-	end
+    // Tried this: next_player_input_cell = input_seq[4*input_seq_cursor:4*input_seq_cursor-4];
+    // Got this error: "Range must be bounded by constant expressions."
+    // Fixed by this: https://stackoverflow.com/questions/25123924/verilog-range-must-be-bounded-by-constant-expression
+    input_seq_cursor = (input_seq_cursor <= 4) ? input_seq_cursor : input_seq_cursor - 4;
+    next_player_input_cell = input_seq[input_seq_cursor -:4];
+    if (errno) begin
+        $display("error");
+        resetn = 0;
+        #5 resetn = 1;
+    end
+    if (someone_won) begin
+        $display("player %s won", player_x_won ? "x" : "o");
+        resetn = 0;
+        #5 resetn = 1;
+    end
 end
 
 
