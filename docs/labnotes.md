@@ -34,3 +34,7 @@ layout: page
 - PLL (Phase Locked Loop) Verilog File : [PLL_PIXEL_CLK.v]({{site.baseurl}}/lab_pdfs/final_project_vga_files/PLL_PIXEL_CLK.v)
 - QSF File : [VGA_top.qsf]({{site.baseurl}}/lab_pdfs/final_project_vga_files/VGA_top.qsf)
 
+# Testbenches
+
+- Tutorial video on testbenches (Must be logged in to you Umaine account to view) : [Testbenches Tutorial](https://drive.google.com/file/d/1_xbmeY4J0596vx63K-ubjDB998AcH6LX/view?usp=sharing)
+
