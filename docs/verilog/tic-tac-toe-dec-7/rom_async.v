@@ -12,11 +12,12 @@ module rom_async #(
     parameter DEPTH=512,
     parameter INIT_F=""
     ) (
-    input wire [ADDRW-1:0] addr,
-    output     [WIDTH-1:0] data
+    input wire [$clog2(DEPTH)-1:0] addr,
+    output wire [WIDTH-1:0] data
     );
+
     localparam ADDRW=$clog2(DEPTH);
-    reg [WIDTH-1:0] memory [DEPTH];
+    reg [WIDTH-1:0] memory [DEPTH-1:0];
 
     initial begin
         if (INIT_F != 0) begin
