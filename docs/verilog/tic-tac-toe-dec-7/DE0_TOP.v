@@ -95,7 +95,9 @@ ticTacToe_output_7seg tto_7seg(
 );
 
 
-ticTacToe_output_vga tto_vga(
+ticTacToe_output_vga  #(
+    .INIT_F("font_unscii_8x8_latin_uc.mem")
+) tto_vga (
  .CLOCK(CLOCK_50),
  .reset_n(reset_button),
  .next_valid_cell(next_valid_cell),

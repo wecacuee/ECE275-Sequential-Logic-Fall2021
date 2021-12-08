@@ -73,7 +73,7 @@ always @ (posedge CLOCK or negedge reset_out)
                 errno  		      = 1'b0;
             end
         else begin
-            if (grid_state_marked == 9'b111_111_111) begin
+            if (grid_state_marked == 9'b111_111_111 || someone_won) begin
                   cell_cursor <= cell_cursor;
             end
             else if (next_valid_cell | grid_state_marked[cell_cursor]) begin
